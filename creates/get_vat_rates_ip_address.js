@@ -10,7 +10,7 @@ export default {
   key: "get_vat_rates_ip_address",
   noun: "Financial",
   display: {
-    label: "Get VAT rate by IP address",
+    label: "Get VAT Rate by IP Address",
     description: "Fetches VAT rate based on the specified or originating IP address.",
   },
   operation: {

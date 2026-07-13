@@ -24,5 +24,12 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "subregions": [
+        "Eastern Africa",
+        "Western Europe",
+        "Southern Asia"
+      ]
+    },
   },
 };

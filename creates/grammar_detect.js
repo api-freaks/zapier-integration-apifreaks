@@ -11,7 +11,7 @@ export default {
   key: "grammar_detect",
   noun: "Readability",
   display: {
-    label: "Detect grammar errors and return flagged words with positions",
+    label: "Detect Grammar Errors",
     description: "Analyze text for grammar errors and return the exact words flagged as grammatically incorrect with zero-based word positions.",
   },
   operation: {

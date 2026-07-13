@@ -11,7 +11,7 @@ export default {
   key: "post_email_validation_bulk",
   noun: "Email Validation",
   display: {
-    label: "Validate multiple email addresses",
+    label: "Validate Multiple Email Addresses",
     description: "Validates a bulk of email addresses and returns result for each. Maximum `100` email addresses per request.",
   },
   operation: {

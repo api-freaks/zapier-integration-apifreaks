@@ -10,7 +10,7 @@ export default {
   key: "get_ip_whois_live",
   noun: "WHOIS",
   display: {
-    label: "Access the WHOIS Data for any IP",
+    label: "IP WHOIS Lookup",
     description: "Returns WHOIS registration details for a specified IP address (IPv4 or IPv6).",
   },
   operation: {

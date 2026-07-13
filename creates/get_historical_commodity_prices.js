@@ -10,7 +10,7 @@ export default {
   key: "get_historical_commodity_prices",
   noun: "Commodity",
   display: {
-    label: "Get historical commodity prices",
+    label: "Get Historical Commodity Prices",
     description: "Returns OHLC price data for the requested commodity symbols on a specific date.",
   },
   operation: {

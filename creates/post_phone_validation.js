@@ -11,7 +11,7 @@ export default {
   key: "post_phone_validation",
   noun: "Phone Validation",
   display: {
-    label: "Validate a single phone number",
+    label: "Validate a Single Phone Number",
     description: "Validates a single phone number and returns detailed metadata including carrier, line type, geolocation, time zones, and standardized formats.",
   },
   operation: {

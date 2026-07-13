@@ -10,7 +10,7 @@ export default {
   key: "get_geocoder_search",
   noun: "Geocoding",
   display: {
-    label: "Forward geocoding (address to coordinates)",
+    label: "Forward Geocoding (Address to Coordinates)",
     description: "Convert a given address or place name into geographic coordinates (latitude and longitude).",
   },
   operation: {

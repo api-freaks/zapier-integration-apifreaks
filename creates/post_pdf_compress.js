@@ -11,13 +11,14 @@ export default {
   key: "post_pdf_compress",
   noun: "PDF",
   display: {
-    label: "Compress a PDF file",
+    label: "Compress a PDF File",
     description: "This API compresses a given PDF file to reduce its file size.",
   },
   operation: {
     inputFields: [
       {
         key: "file_id",
+        dynamic: "pdf_file_list.id.name",
         label: "File Id",
         type: 'string',
         required: false,
@@ -61,5 +62,11 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "taskId": "example",
+      "inputIds": [
+        "example"
+      ]
+    },
   },
 };

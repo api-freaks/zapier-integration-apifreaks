@@ -11,7 +11,7 @@ export default {
   key: "post_phone_validation_bulk",
   noun: "Phone Validation",
   display: {
-    label: "Bulk validate phone numbers",
+    label: "Bulk Validate Phone Numbers",
     description: "Validates up to 100 phone numbers in a single request. Each number is processed independently \u2014 invalid entries return per-number errors without affecting the rest of the batch.",
   },
   operation: {

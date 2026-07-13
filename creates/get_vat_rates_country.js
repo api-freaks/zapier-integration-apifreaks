@@ -10,7 +10,7 @@ export default {
   key: "get_vat_rates_country",
   noun: "Financial",
   display: {
-    label: "Get VAT rate by country code",
+    label: "Get VAT Rate by Country Code",
     description: "Fetches VAT rates for a single country or state provided via query parameters.",
   },
   operation: {

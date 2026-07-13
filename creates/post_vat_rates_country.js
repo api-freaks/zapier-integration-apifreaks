@@ -10,7 +10,7 @@ export default {
   key: "post_vat_rates_country",
   noun: "Financial",
   display: {
-    label: "Bulk VAT lookup by country",
+    label: "Bulk VAT Lookup by Country",
     description: "Retrieves VAT details for multiple countries or country-state combinations in a single request. Maximum of `100` entries per request are allowed.",
   },
   operation: {

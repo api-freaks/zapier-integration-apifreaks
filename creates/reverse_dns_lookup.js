@@ -10,7 +10,7 @@ export default {
   key: "reverse_dns_lookup",
   noun: "DNS",
   display: {
-    label: "Retrieve all the hostnames associated with any particular A, AA",
+    label: "Reverse DNS Lookup",
     description: "Retrieve all the hostnames associated with any particular A, AAAA, MX, NS, SOA, SPF, TXT, and CNAME DNS records. For instance, you can access all the hostnames hosted on any IP/CIDR notation, all the domain names using Cloudflare name servers, and all the domain names using Google Mailbox",
   },
   operation: {

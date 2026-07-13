@@ -10,7 +10,7 @@ export default {
   key: "convert_historical",
   noun: "Currency",
   display: {
-    label: "Convert currency with historical rates",
+    label: "Convert Currency With Historical Rates",
     description: "Converts an amount using exchange rates from a specific historical date.",
   },
   operation: {

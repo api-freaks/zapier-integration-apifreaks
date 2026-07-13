@@ -11,7 +11,7 @@ export default {
   key: "post_current",
   noun: "Weather",
   display: {
-    label: "Get real-time weather data for multiple locations, coordinates,",
+    label: "Get Current Weather for Multiple Locations",
     description: "Retrieve current weather conditions for up to `50 locations` in a single request. A maximum of 50 locations (city names, IP addresses, or geographic coordinates) can be included in the request body.",
   },
   operation: {

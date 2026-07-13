@@ -12,7 +12,7 @@ export default {
   key: "post_domain_availability",
   noun: "Domain",
   display: {
-    label: "Check the availability of multiple domains in a single request",
+    label: "Bulk Domain Availability Check",
     description: "Perform Bulk Domain Availability checks using a list of domains. Supports upto `100 Domains Per Request`.",
   },
   operation: {

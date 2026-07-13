@@ -10,7 +10,7 @@ export default {
   key: "get_ip_security",
   noun: "IP Geolocation",
   display: {
-    label: "Retrieve security information for an IP address",
+    label: "Retrieve Security Information for an IP Address",
     description: "Get comprehensive security information for a given IP address. Detects VPNs, proxies, Tor nodes, and other security threats.",
   },
   operation: {
@@ -38,5 +38,29 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "ip": "8.8.8.8",
+      "security": {
+        "threat_score": 5,
+        "is_tor": false,
+        "is_proxy": false,
+        "proxy_provider_names": [],
+        "proxy_confidence_score": 0,
+        "proxy_last_seen": "",
+        "is_residential_proxy": false,
+        "is_vpn": false,
+        "vpn_provider_names": [],
+        "vpn_confidence_score": 0,
+        "vpn_last_seen": "",
+        "is_relay": false,
+        "relay_provider_name": "",
+        "is_anonymous": false,
+        "is_known_attacker": false,
+        "is_bot": false,
+        "is_spam": false,
+        "is_cloud_provider": true,
+        "cloud_provider_name": "Google LLC"
+      }
+    },
   },
 };

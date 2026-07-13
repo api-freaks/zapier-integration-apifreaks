@@ -10,7 +10,7 @@ export default {
   key: "get_current",
   noun: "Weather",
   display: {
-    label: "Real-time weather conditions for any location on demand",
+    label: "Get Current Weather",
     description: "Get current weather data including temperature, humidity, precipitation, wind conditions, atmospheric pressure, and air quality for any location. Accepts city names, coordinates, or IP addresses. Also includes astronomy data and timezone-aware timestamps.",
   },
   operation: {

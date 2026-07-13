@@ -11,13 +11,14 @@ export default {
   key: "post_pdf_rotate",
   noun: "PDF",
   display: {
-    label: "Rotate pages in a PDF",
+    label: "Rotate Pages in a PDF",
     description: "This API rotates pages of a PDF by a specified angle (in multiples of 90 degrees).",
   },
   operation: {
     inputFields: [
       {
         key: "file_id",
+        dynamic: "pdf_file_list.id.name",
         label: "File Id",
         type: 'string',
         required: false,
@@ -67,5 +68,11 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "taskId": "example",
+      "inputIds": [
+        "example"
+      ]
+    },
   },
 };

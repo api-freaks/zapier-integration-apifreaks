@@ -10,7 +10,7 @@ export default {
   key: "get_vat_supported_countries",
   noun: "Financial",
   display: {
-    label: "Get supported countries",
+    label: "Get Supported Countries",
     description: "Retrieves a list of supported countries.",
   },
   operation: {
@@ -25,5 +25,56 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "VAT_Supported_Countries_And_States": [
+        {
+          "afghanistan": {
+            "code": "af"
+          }
+        },
+        {
+          "albania": {
+            "code": "al"
+          }
+        },
+        {
+          "algeria": {
+            "code": "dz"
+          }
+        }
+      ],
+      "IBAN_Supported_Countries": [
+        {
+          "countryCode": "AL",
+          "name": "Albania"
+        },
+        {
+          "countryCode": "AD",
+          "name": "Andorra"
+        },
+        {
+          "countryCode": "AT",
+          "name": "Austria"
+        },
+        {
+          "countryCode": "AZ",
+          "name": "Azerbaijan"
+        }
+      ],
+      "SWIFT_Supported_Countries": [
+        {
+          "name": "Albania",
+          "countryCode": "AL"
+        },
+        {
+          "name": "Andorra",
+          "countryCode": "AD"
+        },
+        {
+          "name": "Argentina",
+          "countryCode": "AR"
+        }
+      ]
+    },
   },
 };

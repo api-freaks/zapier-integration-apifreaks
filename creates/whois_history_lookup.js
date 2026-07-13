@@ -10,7 +10,7 @@ export default {
   key: "whois_history_lookup",
   noun: "WHOIS",
   display: {
-    label: "Get all the historical WHOIS records of a domain",
+    label: "WHOIS History Lookup",
     description: "Retrieve historical WHOIS records for a domain name.\nThis endpoint provides a timeline of all recorded changes in domain registration information.",
   },
   operation: {

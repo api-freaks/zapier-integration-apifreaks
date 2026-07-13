@@ -10,7 +10,7 @@ export default {
   key: "get_countries",
   noun: "GeoDB",
   display: {
-    label: "Get list of countries",
+    label: "Get List of Countries",
     description: "Retrieve countries, optionally filtered by region or subregion.",
   },
   operation: {
@@ -31,5 +31,18 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "countries": [
+        {
+          "name": "United States",
+          "iso_alpha_2": "US",
+          "iso_alpha_3": "USA",
+          "iso_numeric": 840,
+          "capital": "Washington",
+          "region": "Americas",
+          "subregion": "Northern America"
+        }
+      ]
+    },
   },
 };

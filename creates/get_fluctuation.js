@@ -10,7 +10,7 @@ export default {
   key: "get_fluctuation",
   noun: "Currency",
   display: {
-    label: "Get exchange rate fluctuations",
+    label: "Get Exchange Rate Fluctuations",
     description: "Returns exchange rate fluctuations between two dates for the requested symbols.",
   },
   operation: {

@@ -3,14 +3,16 @@ const perform = async (z, bundle) => {
     url: "https://api.apifreaks.com/v1.0/swift-code/finder",
     params: { "country": bundle.inputData["country"], "bank": bundle.inputData["bank"], "city": bundle.inputData["city"] },
   });
-  return response.data;
+  // API returns a bare array of SWIFT codes; wrap it so the action
+  // returns an object (Zapier creates must output objects, not bare arrays).
+  return { swift_codes: response.data };
 };
 
 export default {
   key: "get_swift_code_finder",
   noun: "Financial",
   display: {
-    label: "Find SWIFT codes",
+    label: "Find SWIFT Codes",
     description: "Fetches SWIFT codes for a given country, bank, and city.",
   },
   operation: {
@@ -38,5 +40,12 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "swift_codes": [
+        "BUKBGB22",
+        "BARCGB22",
+        "HBUKGB4B"
+      ]
+    },
   },
 };

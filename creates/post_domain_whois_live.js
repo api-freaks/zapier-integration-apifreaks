@@ -11,7 +11,7 @@ export default {
   key: "post_domain_whois_live",
   noun: "WHOIS",
   display: {
-    label: "Retrieve WHOIS data of multiple domains in a single request",
+    label: "Bulk Domain WHOIS Lookup",
     description: "Retrieve WHOIS information for `100 Domains per Request`.",
   },
   operation: {

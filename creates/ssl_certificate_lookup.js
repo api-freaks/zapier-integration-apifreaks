@@ -10,7 +10,7 @@ export default {
   key: "ssl_certificate_lookup",
   noun: "SSL",
   display: {
-    label: "Retrieve the SSL certificate and any hidden information embedde",
+    label: "SSL Certificate Lookup",
     description: "Retrieve comprehensive SSL certificate information without the certificate chain.\nThis endpoint provides detailed information about the SSL certificate including expiry dates, issuer details, and encryption methods.",
   },
   operation: {

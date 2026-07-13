@@ -17,5 +17,14 @@ export default {
 
     ],
     perform,
+    sample: {
+      "regions": [
+        "Africa",
+        "Asia",
+        "Europe",
+        "North America",
+        "South America"
+      ]
+    },
   },
 };

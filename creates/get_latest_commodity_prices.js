@@ -10,7 +10,7 @@ export default {
   key: "get_latest_commodity_prices",
   noun: "Commodity",
   display: {
-    label: "Get latest commodity prices",
+    label: "Get Latest Commodity Prices",
     description: "Returns the current live price for the requested commodity symbols.",
   },
   operation: {

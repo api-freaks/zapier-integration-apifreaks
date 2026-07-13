@@ -31,5 +31,14 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "admin_units": [
+        {
+          "name": "United States",
+          "admin_code": "example",
+          "admin_level": "example"
+        }
+      ]
+    },
   },
 };

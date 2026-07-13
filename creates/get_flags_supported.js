@@ -17,5 +17,10 @@ export default {
 
     ],
     perform,
+    sample: {
+      "name": "United States",
+      "iso2": "US",
+      "iso3": "USA"
+    },
   },
 };

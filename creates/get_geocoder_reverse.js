@@ -10,7 +10,7 @@ export default {
   key: "get_geocoder_reverse",
   noun: "Geocoding",
   display: {
-    label: "Reverse geocoding (coordinates to address)",
+    label: "Reverse Geocoding (Coordinates to Address)",
     description: "Convert geographic coordinates (latitude and longitude) into a human-readable address or place name.",
   },
   operation: {

@@ -48,5 +48,11 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "url": "https://api.apifreaks.com/v1.0/flags/us/flat.png",
+      "name": "US",
+      "shape": "flat",
+      "format": "png"
+    },
   },
 };

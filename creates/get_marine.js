@@ -10,7 +10,7 @@ export default {
   key: "get_marine",
   noun: "Weather",
   display: {
-    label: "Dive into detailed marine weather forecasts for coastal and off",
+    label: "Get Marine Weather Forecast",
     description: "Provides hourly forecasts of marine conditions including wave heights, wave directions, wave periods, swell info, sea surface temperatures, and ocean currents. Supports multiple geographical points and returns daily max wave statistics for up to 7 days. Ideal for maritime planning, navigation, and coastal activities.",
   },
   operation: {

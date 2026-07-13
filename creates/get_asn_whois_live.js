@@ -10,7 +10,7 @@ export default {
   key: "get_asn_whois_live",
   noun: "WHOIS",
   display: {
-    label: "Get detailed ASN information, including block ranges, routing p",
+    label: "ASN WHOIS Lookup",
     description: "Returns WHOIS registration details for a specified ASN, with or without the 'as' prefix.",
   },
   operation: {

@@ -2,6 +2,7 @@ import packageJson from './package.json' with { type: 'json' };
 import zapier from 'zapier-platform-core';
 
 import authentication, { includeApiKey } from './authentication.js';
+import t_pdf_file_list from './triggers/pdf_file_list.js';
 import c_get_latest_commodity_prices from './creates/get_latest_commodity_prices.js';
 import c_get_historical_commodity_prices from './creates/get_historical_commodity_prices.js';
 import c_get_commodity_time_series from './creates/get_commodity_time_series.js';
@@ -123,7 +124,9 @@ export default {
   beforeRequest: [includeApiKey],
   
 
-  triggers: {},
+  triggers: {
+    [t_pdf_file_list.key]: t_pdf_file_list,
+  },
   searches: {},
   creates: {
     [c_get_latest_commodity_prices.key]: c_get_latest_commodity_prices,

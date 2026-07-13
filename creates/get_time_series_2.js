@@ -10,7 +10,7 @@ export default {
   key: "get_time_series_2",
   noun: "Weather",
   display: {
-    label: "Get historical weather data across a date range",
+    label: "Get Historical Weather Time Series",
     description: "Pull historical weather information for date ranges up to 90 days (daily data) or 7 days (hourly data). Get consistent formatting across your specified date range with reliable historical weather patterns.",
   },
   operation: {

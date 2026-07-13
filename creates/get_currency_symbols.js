@@ -9,7 +9,7 @@ export default {
   key: "get_currency_symbols",
   noun: "Currency",
   display: {
-    label: "Get all currency symbols",
+    label: "Get All Currency Symbols",
     description: "Returns a map of currency codes to their full names.",
   },
   operation: {

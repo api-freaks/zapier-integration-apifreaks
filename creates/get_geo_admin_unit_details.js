@@ -31,5 +31,13 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "name": "United States",
+      "admin_code": "example",
+      "admin_iso3166_2": "example",
+      "admin_level": "example",
+      "country_iso3166_2": "example",
+      "country_name": "example"
+    },
   },
 };

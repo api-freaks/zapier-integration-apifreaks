@@ -10,7 +10,7 @@ export default {
   key: "post_pdf_resource_upload",
   noun: "PDF",
   display: {
-    label: "Upload multiple PDFs and get file IDs",
+    label: "Upload Multiple PDFs and Get File IDs",
     description: "This API uploads multiple PDF files to the API Freaks server and generates their unique file IDs.",
   },
   operation: {
@@ -18,5 +18,13 @@ export default {
 
     ],
     perform,
+    sample: {
+      "files": [
+        {
+          "fileName": "document.pdf",
+          "fileId": "a1b2c3d4-0000-0000-0000-000000000000"
+        }
+      ]
+    },
   },
 };

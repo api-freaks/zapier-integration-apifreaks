@@ -10,7 +10,7 @@ export default {
   key: "get_admin_units",
   noun: "GeoDB",
   display: {
-    label: "Get administrative units for a country",
+    label: "Get Administrative Units for a Country",
     description: "Retrieve administrative units based on ISO 3166-1 alpha-2 country code.",
   },
   operation: {
@@ -24,5 +24,10 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "admin_levels": [
+        "example"
+      ]
+    },
   },
 };

@@ -11,7 +11,7 @@ export default {
   key: "bulklookup_zip_codes_post",
   noun: "ZIP Code",
   display: {
-    label: "Lookup ZIP/postal codes",
+    label: "Lookup ZIP/Postal Codes",
     description: "Validates a bulk of ZIP/postal codes and returns result for each. Maximum `100` ZIP/postal codes per request.",
   },
   operation: {
@@ -32,5 +32,27 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "results": [
+        {
+          "code": "55270",
+          "country_code": "PK",
+          "region": "Punjab",
+          "city": "Manga Mandi",
+          "locality": "",
+          "latitude": 31.2989,
+          "longitude": 74.07
+        },
+        {
+          "code": "55270",
+          "country_code": "PK",
+          "region": "Punjab",
+          "city": "Lahore",
+          "locality": "Manga Mandi",
+          "latitude": 31.303999,
+          "longitude": 74.063995
+        }
+      ]
+    },
   },
 };

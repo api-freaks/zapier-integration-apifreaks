@@ -10,7 +10,7 @@ export default {
   key: "convert_latest",
   noun: "Currency",
   display: {
-    label: "Convert currency with latest rates",
+    label: "Convert Currency With Latest Rates",
     description: "Converts an amount from one currency to another using the latest exchange rates.",
   },
   operation: {

@@ -10,7 +10,7 @@ export default {
   key: "get_latest_exchange_rates",
   noun: "Currency",
   display: {
-    label: "Get the latest exchange rates",
+    label: "Get the Latest Exchange Rates",
     description: "Returns the latest exchange rates for the requested base currency and symbols.",
   },
   operation: {

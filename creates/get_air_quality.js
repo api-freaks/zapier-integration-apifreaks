@@ -10,7 +10,7 @@ export default {
   key: "get_air_quality",
   noun: "Weather",
   display: {
-    label: "Air pollution monitoring and quality forecasts",
+    label: "Get Air Quality Data",
     description: "Monitor and predict air quality conditions using European and US AQI standards. Track pollutant concentrations including PM10, PM2.5, carbon monoxide, nitrogen dioxide, sulfur dioxide, ozone, and dust particles. Get current readings plus hourly forecasts up to 5 days ahead, complete with UV index and aerosol measurements for comprehensive air quality assessment.",
   },
   operation: {

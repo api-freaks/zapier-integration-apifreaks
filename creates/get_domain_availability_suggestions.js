@@ -10,7 +10,7 @@ export default {
   key: "get_domain_availability_suggestions",
   noun: "Domain",
   display: {
-    label: "Check domain availability and receive suggestions for related d",
+    label: "Domain Availability With Suggestions",
     description: "The Domain Search API is designed to simplify the process of finding available domain names across all top-level domains (TLDs) and second-level domains (SLDs).",
   },
   operation: {

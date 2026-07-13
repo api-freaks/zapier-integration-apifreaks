@@ -24,5 +24,22 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "name": "United States",
+      "iso_alpha_2": "US",
+      "iso_alpha_3": "USA",
+      "iso_numeric": 840,
+      "phone_code": 1,
+      "capital": "Washington",
+      "top_level_domain": ".us",
+      "native_name": "United States",
+      "region": "Americas",
+      "subregion": "Northern America",
+      "nationality": "American",
+      "flag_emoji": "🇺🇸",
+      "currency_code": "USD",
+      "currency_name": "US Dollar",
+      "currency_symbol": "$"
+    },
   },
 };

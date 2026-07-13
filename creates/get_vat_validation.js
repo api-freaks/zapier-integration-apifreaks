@@ -10,7 +10,7 @@ export default {
   key: "get_vat_validation",
   noun: "Financial",
   display: {
-    label: "Validate EU and UK VAT number",
+    label: "Validate EU and UK VAT Number",
     description: "Validates an EU or UK VAT number and returns registration status details.",
   },
   operation: {

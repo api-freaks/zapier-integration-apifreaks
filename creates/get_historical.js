@@ -10,7 +10,7 @@ export default {
   key: "get_historical",
   noun: "Weather",
   display: {
-    label: "Retrieve past weather data for a specific date and location, co",
+    label: "Get Historical Weather",
     description: "Access past weather conditions for specific dates with records going back to 1940. Retrieve comprehensive historical data with both daily and hourly precision options.",
   },
   operation: {

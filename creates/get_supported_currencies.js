@@ -9,7 +9,7 @@ export default {
   key: "get_supported_currencies",
   noun: "Currency",
   display: {
-    label: "Get all supported currencies",
+    label: "Get All Supported Currencies",
     description: "Returns a map of all supported currencies with metadata.",
   },
   operation: {

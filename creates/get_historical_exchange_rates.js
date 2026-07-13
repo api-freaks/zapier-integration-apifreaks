@@ -10,7 +10,7 @@ export default {
   key: "get_historical_exchange_rates",
   noun: "Currency",
   display: {
-    label: "Get historical exchange rates",
+    label: "Get Historical Exchange Rates",
     description: "Returns exchange rates for a specific historical date.",
   },
   operation: {

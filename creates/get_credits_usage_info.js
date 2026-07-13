@@ -9,7 +9,7 @@ export default {
   key: "get_credits_usage_info",
   noun: "General",
   display: {
-    label: "Get credits usage information",
+    label: "Get Credits Usage Information",
     description: "Returns the remaining and consumed API credits for the authenticated user.",
   },
   operation: {
@@ -17,5 +17,20 @@ export default {
 
     ],
     perform,
+    sample: {
+      "apiKey": "your-api-key",
+      "userStatus": "active",
+      "subActive": true,
+      "subStatus": "example",
+      "subAllowedCredits": 123,
+      "subUsedCredits": 123,
+      "subSurchargeStatus": "example",
+      "subSurchargeAllowedCredits": 123,
+      "subSurchargeUsedCredits": 123,
+      "subSurchargeAllowed": true,
+      "oneOffCreditsActive": true,
+      "oneOffAllowedCredits": 123,
+      "oneOffUsedCredits": 123
+    },
   },
 };

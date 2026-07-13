@@ -9,7 +9,7 @@ export default {
   key: "get_historical_data_limits",
   noun: "Currency",
   display: {
-    label: "Get historical data availability limits",
+    label: "Get Historical Data Availability Limits",
     description: "Returns the date range when historical data is available for each currency.",
   },
   operation: {

@@ -10,7 +10,7 @@ export default {
   key: "get_pdf_resource_download",
   noun: "PDF",
   display: {
-    label: "Download PDF resource",
+    label: "Download PDF Resource",
     description: "This API downloads PDF files or ZIP archives from the server using their unique resource ID.",
   },
   operation: {
@@ -24,5 +24,11 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "file": "https://api.apifreaks.com/v1.0/pdf/resource/download?resource_id=a1b2c3d4",
+      "resource_id": "a1b2c3d4-0000-0000-0000-000000000000",
+      "file_name": "document.pdf",
+      "file_type": "pdf"
+    },
   },
 };

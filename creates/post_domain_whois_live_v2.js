@@ -11,7 +11,7 @@ export default {
   key: "post_domain_whois_live_v2",
   noun: "WHOIS",
   display: {
-    label: "Bulk domain WHOIS lookup (v2.0)",
+    label: "Bulk Domain WHOIS Lookup (V2.0)",
     description: "Retrieve WHOIS information for `100 Domains per Request`. - v2.0 response format.",
   },
   operation: {

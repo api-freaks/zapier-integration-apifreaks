@@ -10,7 +10,7 @@ export default {
   key: "get_subdomains_lookup",
   noun: "Domain",
   display: {
-    label: "Get subdomains related to the given domain name",
+    label: "Subdomains Lookup",
     description: "The Subdomain Lookup API is designed to retrieve subdomains related to the given domain name. It helps you explore subdomains that are available for registration or usage.",
   },
   operation: {

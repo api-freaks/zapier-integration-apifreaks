@@ -10,7 +10,7 @@ export default {
   key: "search_zip_by_city",
   noun: "ZIP Code",
   display: {
-    label: "Search ZIP/postal codes by city",
+    label: "Search ZIP/Postal Codes by City",
     description: "Search ZIP/postal codes by city",
   },
   operation: {
@@ -45,5 +45,16 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "total_results": 130,
+      "total_pages": 1,
+      "current_page": 1,
+      "current_page_size": 130,
+      "codes": [
+        "36280",
+        "53000",
+        "53100"
+      ]
+    },
   },
 };

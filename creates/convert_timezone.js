@@ -10,7 +10,7 @@ export default {
   key: "convert_timezone",
   noun: "Timezone",
   display: {
-    label: "Convert any timestamp from one timezone to another using timezo",
+    label: "Convert Time Between Timezones",
     description: "Converts a given time from one timezone to another using various input types like timezone name, coordinates, location, or codes.",
   },
   operation: {
@@ -122,5 +122,11 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "original_time": "2024-09-01 00:00:00",
+      "converted_time": "2024-09-01 09:00:00",
+      "diff_hour": 9,
+      "diff_min": 540
+    },
   },
 };

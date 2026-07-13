@@ -10,7 +10,7 @@ export default {
   key: "convert_by_ip",
   noun: "Currency",
   display: {
-    label: "Convert currency based on IP geolocation",
+    label: "Convert Currency Based on IP Geolocation",
     description: "Converts an amount to the local currency of a given IP address.",
   },
   operation: {

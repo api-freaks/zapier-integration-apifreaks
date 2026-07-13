@@ -10,7 +10,7 @@ export default {
   key: "dns_lookup",
   noun: "DNS",
   display: {
-    label: "Get A, AAAA, MX, NS, SOA, SPF, TXT, and CNAME DNS records for a",
+    label: "DNS Lookup",
     description: "Retrieve real-time DNS records for any hostname. Supports multiple record types including A, AAAA, MX, NS, SOA, SPF, TXT, and CNAME records.",
   },
   operation: {

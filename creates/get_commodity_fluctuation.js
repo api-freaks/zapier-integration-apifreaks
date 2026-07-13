@@ -10,7 +10,7 @@ export default {
   key: "get_commodity_fluctuation",
   noun: "Commodity",
   display: {
-    label: "Get commodity price fluctuations",
+    label: "Get Commodity Price Fluctuations",
     description: "Returns price fluctuation metrics (start, end, change, percent change) for the requested commodity symbols over a date range.",
   },
   operation: {

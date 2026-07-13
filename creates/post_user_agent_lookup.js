@@ -11,7 +11,7 @@ export default {
   key: "post_user_agent_lookup",
   noun: "User Agent",
   display: {
-    label: "Retrieve the browser, device, and operating system details of m",
+    label: "Bulk User Agent Lookup",
     description: "Parse up to `50,000 User-Agent strings` at once in a single request.",
   },
   operation: {

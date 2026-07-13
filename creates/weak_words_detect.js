@@ -11,7 +11,7 @@ export default {
   key: "weak_words_detect",
   noun: "Readability",
   display: {
-    label: "Detect weak, vague, and filler words with positions",
+    label: "Detect Weak Words",
     description: "Analyze text and return weak, vague, or filler words with zero-based word positions to help writers produce clearer and more concise content.",
   },
   operation: {

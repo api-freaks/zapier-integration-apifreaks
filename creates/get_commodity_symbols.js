@@ -9,7 +9,7 @@ export default {
   key: "get_commodity_symbols",
   noun: "Commodity",
   display: {
-    label: "Get all supported commodity symbols",
+    label: "Get All Supported Commodity Symbols",
     description: "Returns the list of supported commodity symbols with metadata.",
   },
   operation: {

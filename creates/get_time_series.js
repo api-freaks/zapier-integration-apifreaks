@@ -10,7 +10,7 @@ export default {
   key: "get_time_series",
   noun: "Currency",
   display: {
-    label: "Get time series of exchange rates",
+    label: "Get Time Series of Exchange Rates",
     description: "Returns day-by-day historical exchange rates for a custom date range.",
   },
   operation: {

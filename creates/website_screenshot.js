@@ -10,7 +10,7 @@ export default {
   key: "website_screenshot",
   noun: "Screenshot",
   display: {
-    label: "Build screenshots the way real users see the web \u2014 not just wha",
+    label: "Capture a Website Screenshot",
     description: "Capture full-page screenshots and videos of websites with advanced options like device simulation, custom code injection, cookie banner blocking, and scrollable content recording.\nSupports multiple output formats including JSON, image, GIF, MP4, and WebM.",
   },
   operation: {
@@ -275,21 +275,21 @@ export default {
         label: "Block Stylesheets",
         type: 'string',
         required: false,
-        helpText: "Block Stylesheets",
+        helpText: "Prevent the page's CSS stylesheets from loading before the screenshot is captured.",
       },
       {
         key: "block_images",
         label: "Block Images",
         type: 'string',
         required: false,
-        helpText: "Block Images",
+        helpText: "Prevent images from loading before the screenshot is captured.",
       },
       {
         key: "block_media",
         label: "Block Media",
         type: 'string',
         required: false,
-        helpText: "Block Media",
+        helpText: "Prevent audio and video media from loading before the screenshot is captured.",
       },
       {
         key: "block_font",
@@ -324,7 +324,7 @@ export default {
         label: "Block Event Source",
         type: 'string',
         required: false,
-        helpText: "Block Event Source",
+        helpText: "Block EventSource (server-sent events) connections while the page loads.",
       },
       {
         key: "block_web_socket",
@@ -338,14 +338,14 @@ export default {
         label: "Block Manifest",
         type: 'string',
         required: false,
-        helpText: "Block Manifest",
+        helpText: "Block the page's web app manifest from loading.",
       },
       {
         key: "block_specific_requests",
         label: "Block Specific Requests",
         type: 'string',
         required: false,
-        helpText: "Comma- or newline-separated list of specific requests to block. Each line and comma are treated as separate requests for processing. Example: https://example.com, https://example.js",
+        helpText: "Comma- or newline-separated list of specific request URLs to block. Each comma or new line is treated as a separate entry. For example: example.com/ads or example.com/app.js",
       },
       {
         key: "blur_selector",
@@ -539,5 +539,13 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "url": "https://api.apifreaks.com/v1.0/screenshot/result/9f3c2a.png",
+      "file_name": "screenshot.png",
+      "file_type": "PNG",
+      "width": 1920,
+      "height": 1080,
+      "success": true
+    },
   },
 };

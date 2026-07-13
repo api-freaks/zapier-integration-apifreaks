@@ -10,7 +10,7 @@ export default {
   key: "whois_lookup_v2",
   noun: "WHOIS",
   display: {
-    label: "Domain WHOIS lookup (v2.0)",
+    label: "Domain WHOIS Lookup (V2.0)",
     description: "Retrieve current WHOIS information for a domain name.\nThis endpoint provides detailed registration information including registrar details,\ndates, nameservers, and registrant information. - v2.0 response format.",
   },
   operation: {

@@ -12,7 +12,7 @@ export default {
   key: "readability_score",
   noun: "Readability",
   display: {
-    label: "Calculate readability scores, grade, and sentence-level readabi",
+    label: "Calculate Readability Score",
     description: "Analyze text readability using industry-standard formulas including Flesch Reading Ease, Flesch-Kincaid Grade Level, Gunning Fog Index, SMOG Index, Coleman-Liau Index, and Automated Readability Index.",
   },
   operation: {

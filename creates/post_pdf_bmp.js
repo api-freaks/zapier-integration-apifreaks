@@ -18,6 +18,7 @@ export default {
     inputFields: [
       {
         key: "file_id",
+        dynamic: "pdf_file_list.id.name",
         label: "File Id",
         type: 'string',
         required: false,
@@ -82,5 +83,11 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "taskId": "example",
+      "inputIds": [
+        "example"
+      ]
+    },
   },
 };

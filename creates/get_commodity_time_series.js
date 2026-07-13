@@ -10,7 +10,7 @@ export default {
   key: "get_commodity_time_series",
   noun: "Commodity",
   display: {
-    label: "Get commodity price time series",
+    label: "Get Commodity Price Time Series",
     description: "Returns day-by-day OHLC data for the requested commodity symbols within a date range.",
   },
   operation: {

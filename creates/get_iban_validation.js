@@ -24,5 +24,29 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "valid": true,
+      "iban": "GB49NWBK08609000000003",
+      "validation": {
+        "is_alpha_numeric": true,
+        "is_iban_supported_country": true,
+        "is_valid_length": true,
+        "is_valid_structure": true,
+        "is_iban_check_digit_valid": true,
+        "bban": "valid"
+      },
+      "bank_data": {
+        "bic": "NWBKGB2LBHM",
+        "bank": "NATIONAL WESTMINSTER BANK PLC",
+        "bank_code": "NWBK",
+        "branch_code": "086090",
+        "country": "United Kingdom",
+        "country_iso2": "GB",
+        "city": "BIRMINGHAM",
+        "address": "6 BRINDLEY PLACE",
+        "account": "00000003",
+        "sepa": true
+      }
+    },
   },
 };

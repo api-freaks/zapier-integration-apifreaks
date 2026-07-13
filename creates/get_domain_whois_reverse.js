@@ -10,7 +10,7 @@ export default {
   key: "get_domain_whois_reverse",
   noun: "WHOIS",
   display: {
-    label: "Get all the domains registered by a particular company or owner",
+    label: "Reverse WHOIS Lookup",
     description: "Performs a reverse WHOIS search using one or more search parameters like keyword, email, owner, or company.",
   },
   operation: {
@@ -67,5 +67,48 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "total_Result": 8,
+      "total_Pages": 1,
+      "current_Page": 1,
+      "whois_domains_historical": [
+        {
+          "num": 1,
+          "status": true,
+          "domain_name": "ipgeolocationdatabase.com",
+          "query_time": "2026-05-21 04:00:28",
+          "create_date": "2010-04-14",
+          "update_date": "2026-05-19",
+          "expiry_date": "2027-04-14",
+          "domain_registrar": {
+            "iana_id": "269",
+            "registrar_name": "Key-Systems GmbH",
+            "whois_server": "whois.rrpproxy.net",
+            "website_url": "http://www.key-systems.net",
+            "email_address": "abuse@key-systems.net",
+            "phone_number": "+4968949396850"
+          },
+          "registrant_contact": {
+            "id": "Not Available From Registry",
+            "name": "On behalf of ipgeolocationdatabase.com OWNER",
+            "company": "c/o whoisproxy.com",
+            "city": "Alexandria",
+            "state": "VA",
+            "zip_code": "22314",
+            "country_name": "United States",
+            "country_code": "US",
+            "email_address": "720ed14de67db24c4eb07295ecae369f9f1bfe8a4dd5cd0c51f0e4754ee24895@ipgeolocationdatabase.com.whoisproxy.org",
+            "phone": "+6448319528"
+          },
+          "name_servers": [
+            "dale.ns.cloudflare.com",
+            "olga.ns.cloudflare.com"
+          ],
+          "domain_status": [
+            "clienttransferprohibited"
+          ]
+        }
+      ]
+    },
   },
 };

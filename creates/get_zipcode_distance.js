@@ -11,7 +11,7 @@ export default {
   key: "get_zipcode_distance",
   noun: "ZIP Code",
   display: {
-    label: "Get distance between postal codes",
+    label: "Get Distance Between Postal Codes",
     description: "Get distance between postal codes. Maximum `100` postal codes per request.",
   },
   operation: {
@@ -61,5 +61,18 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "result_count": 2,
+      "results": [
+        {
+          "code": "49610",
+          "distance": 14.835
+        },
+        {
+          "code": "49608",
+          "distance": 14.835
+        }
+      ]
+    },
   },
 };

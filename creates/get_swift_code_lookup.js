@@ -10,7 +10,7 @@ export default {
   key: "get_swift_code_lookup",
   noun: "Financial",
   display: {
-    label: "Lookup SWIFT code details",
+    label: "Lookup SWIFT Code Details",
     description: "Fetches detailed information about a SWIFT code.",
   },
   operation: {
@@ -24,5 +24,14 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "swiftCode": "example",
+      "countryCode": "example",
+      "bankAddress": "example",
+      "bankCode": "example",
+      "bankName": "example",
+      "city": "New York",
+      "country": "United States"
+    },
   },
 };

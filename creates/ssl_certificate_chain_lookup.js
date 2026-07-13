@@ -10,7 +10,7 @@ export default {
   key: "ssl_certificate_chain_lookup",
   noun: "SSL",
   display: {
-    label: "Retrieve all certificates from the domain to the root Certifica",
+    label: "SSL Certificate Chain Lookup",
     description: "Retrieve the complete SSL certificate chain from root Certificate Authority (CA) to end-user certificate.\nThis endpoint provides comprehensive information about each certificate in the chain.",
   },
   operation: {

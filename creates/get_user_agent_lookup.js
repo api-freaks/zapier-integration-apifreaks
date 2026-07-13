@@ -9,7 +9,7 @@ export default {
   key: "get_user_agent_lookup",
   noun: "User Agent",
   display: {
-    label: "Obtain accurate browser, device, and operating system details b",
+    label: "User Agent Lookup",
     description: "Parse User Agent string to get detailed browser, device, and operating system information",
   },
   operation: {

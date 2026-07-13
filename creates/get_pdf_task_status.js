@@ -10,7 +10,7 @@ export default {
   key: "get_pdf_task_status",
   noun: "PDF",
   display: {
-    label: "Check PDF task status",
+    label: "Check PDF Task Status",
     description: "This API checks the status of a previously initiated PDF processing task using its unique task ID.",
   },
   operation: {
@@ -24,5 +24,24 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "taskId": "example",
+      "status": "active",
+      "createdAt": "2025-08-18T11:11:57.143Z",
+      "zipOutputUrl": "example",
+      "zipFileId": "example",
+      "outputUrls": [
+        "example"
+      ],
+      "outputIds": [
+        "example"
+      ],
+      "inputIds": [
+        "example"
+      ],
+      "error": "",
+      "message": "Success",
+      "expiresAt": "2025-08-18T11:11:57.143Z"
+    },
   },
 };

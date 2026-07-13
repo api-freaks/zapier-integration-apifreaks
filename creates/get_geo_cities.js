@@ -31,5 +31,20 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "cities": [
+        {
+          "name": "United States",
+          "latitude": 37.751,
+          "longitude": -97.822,
+          "admin_unit": {
+            "name": "United States",
+            "admin_code": "example",
+            "admin_level": "example"
+          },
+          "iso_alpha_2": "US"
+        }
+      ]
+    },
   },
 };

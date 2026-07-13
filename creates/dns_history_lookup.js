@@ -10,7 +10,7 @@ export default {
   key: "dns_history_lookup",
   noun: "DNS",
   display: {
-    label: "Get all historical A, AAAA, MX, NS, SOA, SPF, TXT, and CNAME DN",
+    label: "DNS History Lookup",
     description: "Retrieve historical DNS records for any hostname. Access unique historical data for A, AAAA, MX, NS, SOA, SPF, TXT, and CNAME records,\nincluding subdomains. Results are paginated with up to 100 unique records per page.",
   },
   operation: {

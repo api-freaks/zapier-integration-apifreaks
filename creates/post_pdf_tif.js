@@ -11,13 +11,14 @@ export default {
   key: "post_pdf_tif",
   noun: "PDF",
   display: {
-    label: "Convert a PDF file into a sequence of TIFF images",
+    label: "Convert a PDF File Into a Sequence of TIFF Images",
     description: "This API converts a given PDF file into a sequence of TIFF images. The output images can be saved as a single TIFF file, or as a sequence of TIFF files.",
   },
   operation: {
     inputFields: [
       {
         key: "file_id",
+        dynamic: "pdf_file_list.id.name",
         label: "File Id",
         type: 'string',
         required: false,
@@ -82,5 +83,11 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "taskId": "example",
+      "inputIds": [
+        "example"
+      ]
+    },
   },
 };

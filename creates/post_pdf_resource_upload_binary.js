@@ -11,7 +11,7 @@ export default {
   key: "post_pdf_resource_upload_binary",
   noun: "PDF",
   display: {
-    label: "Upload a PDF in binary format",
+    label: "Upload a PDF in Binary Format",
     description: "This API uploads PDF files to the API Freaks server in binary format.",
   },
   operation: {
@@ -25,5 +25,9 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "fileName": "document.pdf",
+      "fileId": "a1b2c3d4-0000-0000-0000-000000000000"
+    },
   },
 };

@@ -11,13 +11,14 @@ export default {
   key: "post_pdf_split",
   noun: "PDF",
   display: {
-    label: "Split a PDF into smaller files",
+    label: "Split a PDF Into Smaller Files",
     description: "This API splits a PDF into multiple parts based on specified page numbers or ranges.",
   },
   operation: {
     inputFields: [
       {
         key: "file_id",
+        dynamic: "pdf_file_list.id.name",
         label: "File Id",
         type: 'string',
         required: false,
@@ -60,5 +61,11 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "taskId": "example",
+      "inputIds": [
+        "example"
+      ]
+    },
   },
 };

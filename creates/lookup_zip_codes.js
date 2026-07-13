@@ -10,7 +10,7 @@ export default {
   key: "lookup_zip_codes",
   noun: "ZIP Code",
   display: {
-    label: "Lookup ZIP/postal codes",
+    label: "Lookup ZIP/Postal Codes",
     description: "Lookup ZIP/postal codes",
   },
   operation: {
@@ -31,5 +31,27 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "results": [
+        {
+          "code": "55270",
+          "country_code": "PK",
+          "region": "Punjab",
+          "city": "Manga Mandi",
+          "locality": "",
+          "latitude": 31.2989,
+          "longitude": 74.07
+        },
+        {
+          "code": "55270",
+          "country_code": "PK",
+          "region": "Punjab",
+          "city": "Lahore",
+          "locality": "Manga Mandi",
+          "latitude": 31.303999,
+          "longitude": 74.063995
+        }
+      ]
+    },
   },
 };

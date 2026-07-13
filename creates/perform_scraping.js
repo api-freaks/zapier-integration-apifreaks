@@ -11,7 +11,7 @@ export default {
   key: "perform_scraping",
   noun: "Web Scraping",
   display: {
-    label: "Perform web scraping with custom instructions",
+    label: "Perform Web Scraping With Custom Instructions",
     description: "Execute a series of web scraping instructions on a target URL. \nSupports various operations like form filling, clicking, data extraction, and CAPTCHA solving.",
   },
   operation: {

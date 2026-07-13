@@ -11,13 +11,14 @@ export default {
   key: "post_pdf_merge",
   noun: "PDF",
   display: {
-    label: "Combine multiple PDF files into one",
+    label: "Combine Multiple PDF Files Into One",
     description: "This API merges multiple PDF files into a single PDF, in the order they are provided",
   },
   operation: {
     inputFields: [
       {
         key: "file_id",
+        dynamic: "pdf_file_list.id.name",
         label: "File Id",
         type: 'string',
         required: false,
@@ -53,5 +54,11 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "taskId": "example",
+      "inputIds": [
+        "example"
+      ]
+    },
   },
 };

@@ -10,7 +10,7 @@ export default {
   key: "get_flood",
   noun: "Weather",
   display: {
-    label: "Get flood risk and river discharge forecast",
+    label: "Get Flood Risk Forecast",
     description: "Provides flood forecast data for a given location, including river discharge metrics such as mean, median, maximum, minimum, and percentile values (p25, p75). Requires a startDate and endDate, with the date range limited to 16 days. Location can be specified using city name, latitude/longitude, or IP address.",
   },
   operation: {

@@ -10,7 +10,7 @@ export default {
   key: "get_forecast",
   noun: "Weather",
   display: {
-    label: "Weather predictions from 1 to 16 days with flexible detail leve",
+    label: "Get Weather Forecast",
     description: "Access comprehensive weather forecasts with customizable precision - choose from daily overviews, hourly breakdowns, or even minute-by-minute data. Configure your date ranges or use the default 7-day forecast for standard weather planning.",
   },
   operation: {

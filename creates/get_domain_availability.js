@@ -10,7 +10,7 @@ export default {
   key: "get_domain_availability",
   noun: "Domain",
   display: {
-    label: "Check whether a domain is available for registration or not",
+    label: "Check Domain Availability",
     description: "The Domain Search API is designed to simplify the process of finding available domain names across all top-level domains (TLDs) and second-level domains (SLDs).",
   },
   operation: {

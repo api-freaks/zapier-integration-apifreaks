@@ -11,13 +11,14 @@ export default {
   key: "post_pdf_remove_pages",
   noun: "PDF",
   display: {
-    label: "Delete specific pages from a PDF",
+    label: "Delete Specific Pages From a PDF",
     description: "This API removes a selection or range of pages from a PDF file.",
   },
   operation: {
     inputFields: [
       {
         key: "file_id",
+        dynamic: "pdf_file_list.id.name",
         label: "File Id",
         type: 'string',
         required: false,
@@ -60,5 +61,11 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "taskId": "example",
+      "inputIds": [
+        "example"
+      ]
+    },
   },
 };

@@ -11,7 +11,7 @@ export default {
   key: "grammar_correct",
   noun: "Readability",
   display: {
-    label: "Automatically correct grammar and return corrected text",
+    label: "Correct Grammar",
     description: "Submit text with grammatical issues and receive a clean grammar-corrected result for proofreading and content workflows.",
   },
   operation: {

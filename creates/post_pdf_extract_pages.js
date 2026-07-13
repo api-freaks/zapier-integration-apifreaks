@@ -11,13 +11,14 @@ export default {
   key: "post_pdf_extract_pages",
   noun: "PDF",
   display: {
-    label: "Extract pages from a PDF",
+    label: "Extract Pages From a PDF",
     description: "This API extracts specific pages or page ranges from a PDF file and returns them as a new PDF.",
   },
   operation: {
     inputFields: [
       {
         key: "file_id",
+        dynamic: "pdf_file_list.id.name",
         label: "File Id",
         type: 'string',
         required: false,
@@ -67,5 +68,11 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "taskId": "example",
+      "inputIds": [
+        "example"
+      ]
+    },
   },
 };

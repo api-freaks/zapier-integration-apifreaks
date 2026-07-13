@@ -11,7 +11,7 @@ export default {
   key: "post_email_validation_single",
   noun: "Email Validation",
   display: {
-    label: "Validate a single email",
+    label: "Validate a Single Email",
     description: "Validates a single email address and returns result.",
   },
   operation: {

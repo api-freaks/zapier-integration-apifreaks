@@ -10,7 +10,7 @@ export default {
   key: "search_zip_by_radius",
   noun: "ZIP Code",
   display: {
-    label: "Find ZIP/postal codes within a radius",
+    label: "Find ZIP/Postal Codes Within a Radius",
     description: "Find ZIP/postal codes within a radius",
   },
   operation: {
@@ -67,5 +67,27 @@ export default {
       },
     ],
     perform,
+    sample: {
+      "total_results": 2303,
+      "total_pages": 5,
+      "current_page": 1,
+      "current_page_size": 500,
+      "results": [
+        {
+          "code": "49608",
+          "region": "Punjab",
+          "city": "Tahlian Wala",
+          "district": "",
+          "distance": 14.835
+        },
+        {
+          "code": "49610",
+          "region": "Punjab",
+          "city": "Alliance Textile Mills",
+          "district": "",
+          "distance": 14.835
+        }
+      ]
+    },
   },
 };
