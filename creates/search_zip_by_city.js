@@ -10,7 +10,7 @@ export default {
   key: "search_zip_by_city",
   noun: "ZIP Code",
   display: {
-    label: "Search ZIP/Postal Codes by City",
+    label: "Search Zip/Postal Codes by City",
     description: "Search ZIP/postal codes by city",
   },
   operation: {

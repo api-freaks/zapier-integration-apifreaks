@@ -11,7 +11,7 @@ export default {
   key: "bulklookup_zip_codes_post",
   noun: "ZIP Code",
   display: {
-    label: "Lookup ZIP/Postal Codes",
+    label: "Bulk Lookup Zip/Postal Codes",
     description: "Validates a bulk of ZIP/postal codes and returns result for each. Maximum `100` ZIP/postal codes per request.",
   },
   operation: {

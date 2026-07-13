@@ -10,7 +10,7 @@ export default {
   key: "lookup_zip_codes",
   noun: "ZIP Code",
   display: {
-    label: "Lookup ZIP/Postal Codes",
+    label: "Lookup Zip/Postal Codes",
     description: "Lookup ZIP/postal codes",
   },
   operation: {

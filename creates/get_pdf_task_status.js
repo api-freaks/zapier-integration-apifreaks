@@ -1,47 +1,40 @@
 const perform = async (z, bundle) => {
   const response = await z.request({
-    url: "https://api.apifreaks.com/v1.0/pdf/task-status",
-    params: { "task_id": bundle.inputData["task_id"] },
+    url: "https://api.apifreaks.com/v1.0/pdf/files",
   });
-  return response.data;
+  const data = response.data;
+  // The endpoint may return an array, an object wrapping a list, or a single object.
+  let files = [];
+  if (Array.isArray(data)) {
+    files = data;
+  } else if (data && Array.isArray(data.files)) {
+    files = data.files;
+  } else if (data && Array.isArray(data.data)) {
+    files = data.data;
+  } else if (data && (data.fileId || data.file_id)) {
+    files = [data];
+  }
+  return files.map((f) => {
+    const id = f.fileId || f.file_id || f.id;
+    const fileName = f.fileName || f.file_name || id;
+    return { id, name: fileName };
+  });
 };
 
 export default {
-  key: "get_pdf_task_status",
-  noun: "PDF",
+  key: "pdf_file_list",
+  noun: "PDF File",
   display: {
-    label: "Check PDF Task Status",
-    description: "This API checks the status of a previously initiated PDF processing task using its unique task ID.",
+    label: "List PDF Files",
+    description:
+      "Internal trigger that lists your uploaded PDF files to power file pickers. Hidden from the Zap editor.",
+    hidden: true,
   },
   operation: {
-    inputFields: [
-      {
-        key: "task_id",
-        label: "Task Id",
-        type: 'string',
-        required: true,
-        helpText: "The unique ID of the PDF processing task for which the status is requested.",
-      },
-    ],
     perform,
     sample: {
-      "taskId": "example",
-      "status": "active",
-      "createdAt": "2025-08-18T11:11:57.143Z",
-      "zipOutputUrl": "example",
-      "zipFileId": "example",
-      "outputUrls": [
-        "example"
-      ],
-      "outputIds": [
-        "example"
-      ],
-      "inputIds": [
-        "example"
-      ],
-      "error": "",
-      "message": "Success",
-      "expiresAt": "2025-08-18T11:11:57.143Z"
+      id: "a1b2c3d4-0000-0000-0000-000000000000",
+      name: "document.pdf",
     },
   },
 };

@@ -11,7 +11,7 @@ export default {
   key: "get_zipcode_distance_match",
   noun: "ZIP Code",
   display: {
-    label: "Get Matching ZIP/Postal Code Pairs Within a Distance",
+    label: "Get Matching Zip/Postal Code Pairs Within a Distance",
     description: "Get matching ZIP/postal code pairs within a specified distance. Maximum `100` postal codes per request.",
   },
   operation: {

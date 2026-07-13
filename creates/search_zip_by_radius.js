@@ -10,7 +10,7 @@ export default {
   key: "search_zip_by_radius",
   noun: "ZIP Code",
   display: {
-    label: "Find ZIP/Postal Codes Within a Radius",
+    label: "Find Zip/Postal Codes Within a Radius",
     description: "Find ZIP/postal codes within a radius",
   },
   operation: {
