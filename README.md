@@ -36,15 +36,6 @@ You'll need two things:
 
 ---
 
-## Accessing the integration in Zapier
-
-**While the integration is in invite-only / beta:**
-Open the invite link shared by APIFreaks (or request one from [support@apifreaks.com](mailto:support@apifreaks.com)). Accepting the invite adds APIFreaks to the app list in your Zap editor.
-
-**Once the integration is public:**
-Search **"APIFreaks"** directly in the Zap editor's app picker, or find it in the [Zapier App Directory](https://zapier.com/apps).
-
----
 
 ## Connecting your APIFreaks account
 
