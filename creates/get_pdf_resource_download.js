@@ -1,9 +1,12 @@
 const perform = async (z, bundle) => {
-  const response = await z.request({
-    url: "https://api.apifreaks.com/v1.0/pdf/resource/download",
-    params: { "resource_id": bundle.inputData["resource_id"] },
-  });
-  return response.data;
+  const resourceId = bundle.inputData["resource_id"];
+  return {
+    id: resourceId,
+    resource_id: resourceId,
+    file: `https://api.apifreaks.com/v1.0/pdf/resource/download?resource_id=${resourceId}&apiKey=${bundle.authData.apiKey}`,
+    file_name: `${resourceId}.pdf`,
+    file_type: "pdf",
+  };
 };
 
 export default {
@@ -18,7 +21,7 @@ export default {
       {
         key: "resource_id",
         label: "Resource Id",
-        type: 'string',
+        type: "string",
         required: true,
         dynamic: "pdf_file_list.id.name",
         helpText: "The unique identifier of the file or ZIP archive to download. Pick an uploaded/generated file, or map a ZIP archive ID from a previous PDF task step.",
@@ -26,10 +29,11 @@ export default {
     ],
     perform,
     sample: {
-      "file": "https://api.apifreaks.com/v1.0/pdf/resource/download?resource_id=a1b2c3d4",
-      "resource_id": "a1b2c3d4-0000-0000-0000-000000000000",
-      "file_name": "document.pdf",
-      "file_type": "pdf"
+      id: "a1b2c3d4-0000-0000-0000-000000000000",
+      resource_id: "a1b2c3d4-0000-0000-0000-000000000000",
+      file: "https://api.apifreaks.com/v1.0/pdf/resource/download?resource_id=a1b2c3d4",
+      file_name: "document.pdf",
+      file_type: "pdf",
     },
   },
 };
