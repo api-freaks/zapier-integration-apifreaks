@@ -82,7 +82,6 @@ export default {
             helpText: "Optional IP address associated with the email address.",
           },
         ],
-        helpText: "Add one row per email address (up to 100).",
       },
       {
         key: "format",
