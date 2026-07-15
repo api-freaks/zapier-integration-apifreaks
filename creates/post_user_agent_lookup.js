@@ -4,7 +4,9 @@ const perform = async (z, bundle) => {
     method: "POST",
     body: { "uaStrings": bundle.inputData["uaStrings"] },
   });
-  return response.data;
+  // API returns a bare array; wrap it so this create outputs an object
+  // (Zapier creates must return an object, not a top-level array).
+  return Array.isArray(response.data) ? { results: response.data } : response.data;
 };
 
 export default {
@@ -26,6 +28,8 @@ export default {
     ],
     perform,
     sample: {
+      "results": [
+        {
       "user_agent_string": "Mozilla/5.0 (Linux; Android 8.0.0; SM-G960F Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36",
       "name": "Chrome",
       "type": "Browser",
@@ -50,6 +54,8 @@ export default {
         "version_major": "8",
         "build": "R16NW"
       }
+    }
+      ]
     },
   },
 };

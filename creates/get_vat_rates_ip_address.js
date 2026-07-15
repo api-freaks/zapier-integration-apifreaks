@@ -3,7 +3,9 @@ const perform = async (z, bundle) => {
     url: "https://api.apifreaks.com/v1.0/vat/rates/ip-address",
     params: { "ipAddress": bundle.inputData["ipAddress"] },
   });
-  return response.data;
+  // API returns a bare array; wrap it so this create outputs an object
+  // (Zapier creates must return an object, not a top-level array).
+  return Array.isArray(response.data) ? { results: response.data } : response.data;
 };
 
 export default {
@@ -25,6 +27,8 @@ export default {
     ],
     perform,
     sample: {
+      "results": [
+        {
       "country": "DE",
       "type": "vat",
       "currency": "EUR",
@@ -43,6 +47,8 @@ export default {
         "newspapers": 0.07,
         "periodicals": 0.07
       }
+    }
+      ]
     },
   },
 };

@@ -3,7 +3,9 @@ const perform = async (z, bundle) => {
     url: "https://api.apifreaks.com/v1.0/geolocation/lookup",
     params: { "ip": bundle.inputData["ip"], "lang": bundle.inputData["lang"], "fields": bundle.inputData["fields"], "excludes": bundle.inputData["excludes"], "include": bundle.inputData["include"] },
   });
-  return response.data;
+  // API returns a bare array; wrap it so this create outputs an object
+  // (Zapier creates must return an object, not a top-level array).
+  return Array.isArray(response.data) ? { results: response.data } : response.data;
 };
 
 export default {
@@ -54,6 +56,8 @@ export default {
     ],
     perform,
     sample: {
+      "results": [
+        {
       "ip": "8.8.8.8",
       "location": {
         "continent_code": "NA",
@@ -114,6 +118,8 @@ export default {
         "name": "US Dollar",
         "symbol": "$"
       }
+    }
+      ]
     },
   },
 };

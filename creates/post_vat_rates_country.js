@@ -3,7 +3,9 @@ const perform = async (z, bundle) => {
     url: "https://api.apifreaks.com/v1.0/vat/rates/country",
     method: "POST",
   });
-  return response.data;
+  // API returns a bare array; wrap it so this create outputs an object
+  // (Zapier creates must return an object, not a top-level array).
+  return Array.isArray(response.data) ? { results: response.data } : response.data;
 };
 
 export default {
@@ -19,6 +21,8 @@ export default {
     ],
     perform,
     sample: {
+      "results": [
+        {
       "countries": [
         {
           "country": "de",
@@ -43,6 +47,8 @@ export default {
           "currency": "USD",
           "standard_rate": 0.04
         }
+      ]
+    }
       ]
     },
   },

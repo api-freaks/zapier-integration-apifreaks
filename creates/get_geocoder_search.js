@@ -3,7 +3,9 @@ const perform = async (z, bundle) => {
     url: "https://api.apifreaks.com/v1.0/geocoder/search",
     params: { "query": bundle.inputData["query"], "limit": bundle.inputData["limit"], "min_lat": bundle.inputData["min_lat"], "max_lat": bundle.inputData["max_lat"], "min_lon": bundle.inputData["min_lon"], "max_lon": bundle.inputData["max_lon"] },
   });
-  return response.data;
+  // API returns a bare array; wrap it so this create outputs an object
+  // (Zapier creates must return an object, not a top-level array).
+  return Array.isArray(response.data) ? { results: response.data } : response.data;
 };
 
 export default {
@@ -60,6 +62,8 @@ export default {
     ],
     perform,
     sample: {
+      "results": [
+        {
       "lat": 48.8566,
       "lon": 2.3522,
       "name": "Paris",
@@ -87,6 +91,8 @@ export default {
           "category": "amenity",
           "type": "attraction"
         }
+      ]
+    }
       ]
     },
   },
