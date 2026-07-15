@@ -1,9 +1,38 @@
+const toArray = (val) => {
+  if (val == null || val === "") return [];
+  if (Array.isArray(val)) {
+    return val
+      .flatMap((v) => String(v).split(","))
+      .map((s) => s.trim())
+      .filter(Boolean);
+  }
+  return String(val)
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+};
+
 const perform = async (z, bundle) => {
+  const domainNames = toArray(bundle.inputData.domainNames);
+  const ipAddresses = toArray(bundle.inputData.ipAddresses);
+
+  if (domainNames.length === 0 && ipAddresses.length === 0) {
+    throw new z.errors.Error(
+      "Provide at least one domain name or IP address.",
+      "InvalidData",
+      400
+    );
+  }
+
+  const body = {};
+  if (domainNames.length) body.domainNames = domainNames;
+  if (ipAddresses.length) body.ipAddresses = ipAddresses;
+
   const response = await z.request({
     url: "https://api.apifreaks.com/v1.0/domain/dns/live",
     method: "POST",
-    params: { "type": bundle.inputData["type"] },
-    body: { "domainNames": bundle.inputData["domainNames"], "ipAddresses": bundle.inputData["ipAddresses"] },
+    params: { type: bundle.inputData.type },
+    body, 
   });
   return response.data;
 };
@@ -13,30 +42,36 @@ export default {
   noun: "DNS",
   display: {
     label: "Bulk DNS Lookup",
-    description: "Perform DNS lookups for multiple hostnames in a single request. Supports up to `100 host-names per request`\nand returns DNS records including A, AAAA, MX, NS, SOA, SPF, TXT, and CNAME records.",
+    description:
+      "Perform DNS lookups for multiple hostnames in a single request. Supports up to 100 hostnames per request and returns DNS records including A, AAAA, MX, NS, SOA, SPF, TXT, and CNAME records.",
   },
   operation: {
     inputFields: [
       {
         key: "type",
         label: "Type",
-        type: 'string',
+        type: "string",
         required: true,
-        helpText: "A comma-separated list of DNS record types for lookup. Possible values: A, AAAA, MX, NS, SOA, SPF, TXT, CNAME, or all",
+        default: "all",
+        helpText:
+          "A comma-separated list of DNS record types for lookup. Possible values: A, AAAA, MX, NS, SOA, SPF, TXT, CNAME, or all",
       },
       {
         key: "domainNames",
-        label: "Domainnames",
-        type: 'string',
-        required: true,
-        helpText: "List of hostnames to lookup DNS records for",
+        label: "Domain Names",
+        type: "string",
+        list: true,
+        required: false,
+        helpText: "List of hostnames to lookup DNS records for (up to 100).",
       },
       {
         key: "ipAddresses",
-        label: "Ipaddresses",
-        type: 'string',
+        label: "IP Addresses",
+        type: "string",
+        list: true,
         required: false,
-        helpText: "Array of IP addresses to include in the lookup for enrichment",
+        helpText:
+          "IP addresses to include in the lookup for enrichment / reverse (PTR) lookups (up to 100).",
       },
     ],
     perform,
@@ -96,75 +131,12 @@ export default {
             },
             {
               "name": "google.com",
-              "type": 1,
-              "dnsType": "A",
-              "ttl": 266,
-              "rawText": "google.com.\t\t266\tIN\tA\t142.250.27.101",
-              "rRsetType": 1,
-              "address": "142.250.27.101"
-            },
-            {
-              "name": "google.com",
-              "type": 1,
-              "dnsType": "A",
-              "ttl": 266,
-              "rawText": "google.com.\t\t266\tIN\tA\t142.250.27.102",
-              "rRsetType": 1,
-              "address": "142.250.27.102"
-            },
-            {
-              "name": "google.com",
-              "type": 1,
-              "dnsType": "A",
-              "ttl": 266,
-              "rawText": "google.com.\t\t266\tIN\tA\t142.250.27.138",
-              "rRsetType": 1,
-              "address": "142.250.27.138"
-            },
-            {
-              "name": "google.com",
-              "type": 1,
-              "dnsType": "A",
-              "ttl": 266,
-              "rawText": "google.com.\t\t266\tIN\tA\t142.250.27.139",
-              "rRsetType": 1,
-              "address": "142.250.27.139"
-            },
-            {
-              "name": "google.com",
               "type": 2,
               "dnsType": "NS",
               "ttl": 21600,
               "rawText": "google.com.\t\t21600\tIN\tNS\tns3.google.com.",
               "rRsetType": 2,
               "singleName": "ns3.google.com."
-            },
-            {
-              "name": "google.com",
-              "type": 2,
-              "dnsType": "NS",
-              "ttl": 21600,
-              "rawText": "google.com.\t\t21600\tIN\tNS\tns4.google.com.",
-              "rRsetType": 2,
-              "singleName": "ns4.google.com."
-            },
-            {
-              "name": "google.com",
-              "type": 2,
-              "dnsType": "NS",
-              "ttl": 21600,
-              "rawText": "google.com.\t\t21600\tIN\tNS\tns2.google.com.",
-              "rRsetType": 2,
-              "singleName": "ns2.google.com."
-            },
-            {
-              "name": "google.com",
-              "type": 2,
-              "dnsType": "NS",
-              "ttl": 21600,
-              "rawText": "google.com.\t\t21600\tIN\tNS\tns1.google.com.",
-              "rRsetType": 2,
-              "singleName": "ns1.google.com."
             },
             {
               "name": "google.com",
@@ -204,160 +176,12 @@ export default {
             },
             {
               "name": "google.com",
-              "type": 16,
-              "dnsType": "TXT",
-              "ttl": 300,
-              "rawText": "google.com.\t\t300\tIN\tTXT\t\"google-site-verification=TV9-DBe4R80X4v0M4U_bd_J9cpOJM0nikft0jAgjmsQ\"",
-              "rRsetType": 16,
-              "strings": [
-                "google-site-verification=TV9-DBe4R80X4v0M4U_bd_J9cpOJM0nikft0jAgjmsQ"
-              ]
-            },
-            {
-              "name": "google.com",
-              "type": 16,
-              "dnsType": "TXT",
-              "ttl": 300,
-              "rawText": "google.com.\t\t300\tIN\tTXT\t\"onetrust-domain-verification=0d477fe608074e6f9c12bca7826035cc\"",
-              "rRsetType": 16,
-              "strings": [
-                "onetrust-domain-verification=0d477fe608074e6f9c12bca7826035cc"
-              ]
-            },
-            {
-              "name": "google.com",
-              "type": 16,
-              "dnsType": "TXT",
-              "ttl": 300,
-              "rawText": "google.com.\t\t300\tIN\tTXT\t\"MS=E4A68B9AB2BB9670BCE15412F62916164C0B20BB\"",
-              "rRsetType": 16,
-              "strings": [
-                "MS=E4A68B9AB2BB9670BCE15412F62916164C0B20BB"
-              ]
-            },
-            {
-              "name": "google.com",
-              "type": 16,
-              "dnsType": "TXT",
-              "ttl": 300,
-              "rawText": "google.com.\t\t300\tIN\tTXT\t\"docusign=05958488-4752-4ef2-95eb-aa7ba8a3bd0e\"",
-              "rRsetType": 16,
-              "strings": [
-                "docusign=05958488-4752-4ef2-95eb-aa7ba8a3bd0e"
-              ]
-            },
-            {
-              "name": "google.com",
-              "type": 16,
-              "dnsType": "TXT",
-              "ttl": 300,
-              "rawText": "google.com.\t\t300\tIN\tTXT\t\"google-site-verification=4ibFUgB-wXLQ_S7vsXVomSTVamuOXBiVAzpR5IZ87D0\"",
-              "rRsetType": 16,
-              "strings": [
-                "google-site-verification=4ibFUgB-wXLQ_S7vsXVomSTVamuOXBiVAzpR5IZ87D0"
-              ]
-            },
-            {
-              "name": "google.com",
-              "type": 16,
-              "dnsType": "TXT",
-              "ttl": 300,
-              "rawText": "google.com.\t\t300\tIN\tTXT\t\"cisco-ci-domain-verification=47c38bc8c4b74b7233e9053220c1bbe76bcc1cd33c7acf7acd36cd6a5332004b\"",
-              "rRsetType": 16,
-              "strings": [
-                "cisco-ci-domain-verification=47c38bc8c4b74b7233e9053220c1bbe76bcc1cd33c7acf7acd36cd6a5332004b"
-              ]
-            },
-            {
-              "name": "google.com",
-              "type": 16,
-              "dnsType": "TXT",
-              "ttl": 300,
-              "rawText": "google.com.\t\t300\tIN\tTXT\t\"facebook-domain-verification=22rm551cu4k0ab0bxsw536tlds4h95\"",
-              "rRsetType": 16,
-              "strings": [
-                "facebook-domain-verification=22rm551cu4k0ab0bxsw536tlds4h95"
-              ]
-            },
-            {
-              "name": "google.com",
-              "type": 16,
-              "dnsType": "TXT",
-              "ttl": 300,
-              "rawText": "google.com.\t\t300\tIN\tTXT\t\"docusign=1b0a6754-49b1-4db5-8540-d2c12664b289\"",
-              "rRsetType": 16,
-              "strings": [
-                "docusign=1b0a6754-49b1-4db5-8540-d2c12664b289"
-              ]
-            },
-            {
-              "name": "google.com",
-              "type": 16,
-              "dnsType": "TXT",
-              "ttl": 300,
-              "rawText": "google.com.\t\t300\tIN\tTXT\t\"apple-domain-verification=30afIBcvSuDV2PLX\"",
-              "rRsetType": 16,
-              "strings": [
-                "apple-domain-verification=30afIBcvSuDV2PLX"
-              ]
-            },
-            {
-              "name": "google.com",
-              "type": 16,
-              "dnsType": "TXT",
-              "ttl": 300,
-              "rawText": "google.com.\t\t300\tIN\tTXT\t\"globalsign-smime-dv=CDYX+XFHUw2wml6/Gb8+59BsH31KzUr6c1l2BPvqKX8=\"",
-              "rRsetType": 16,
-              "strings": [
-                "globalsign-smime-dv=CDYX+XFHUw2wml6/Gb8+59BsH31KzUr6c1l2BPvqKX8="
-              ]
-            },
-            {
-              "name": "google.com",
-              "type": 16,
-              "dnsType": "TXT",
-              "ttl": 300,
-              "rawText": "google.com.\t\t300\tIN\tTXT\t\"google-site-verification=wD8N7i1JTNTkezJ49swvWW48f8_9xveREV4oB-0Hf5o\"",
-              "rRsetType": 16,
-              "strings": [
-                "google-site-verification=wD8N7i1JTNTkezJ49swvWW48f8_9xveREV4oB-0Hf5o"
-              ]
-            },
-            {
-              "name": "google.com",
               "type": 28,
               "dnsType": "AAAA",
               "ttl": 106,
               "rawText": "google.com.\t\t106\tIN\tAAAA\t2a00:1450:4025:401:0:0:0:8b",
               "rRsetType": 28,
               "address": "2a00:1450:4025:401:0:0:0:8b"
-            },
-            {
-              "name": "google.com",
-              "type": 28,
-              "dnsType": "AAAA",
-              "ttl": 106,
-              "rawText": "google.com.\t\t106\tIN\tAAAA\t2a00:1450:4025:401:0:0:0:71",
-              "rRsetType": 28,
-              "address": "2a00:1450:4025:401:0:0:0:71"
-            },
-            {
-              "name": "google.com",
-              "type": 28,
-              "dnsType": "AAAA",
-              "ttl": 106,
-              "rawText": "google.com.\t\t106\tIN\tAAAA\t2a00:1450:4025:401:0:0:0:64",
-              "rRsetType": 28,
-              "address": "2a00:1450:4025:401:0:0:0:64"
-            },
-            {
-              "name": "google.com",
-              "type": 28,
-              "dnsType": "AAAA",
-              "ttl": 106,
-              "rawText": "google.com.\t\t106\tIN\tAAAA\t2a00:1450:4025:401:0:0:0:66",
-              "rRsetType": 28,
-              "address": "2a00:1450:4025:401:0:0:0:66"
             },
             {
               "name": "google.com",
@@ -417,30 +241,12 @@ export default {
             },
             {
               "name": "example.com",
-              "type": 1,
-              "dnsType": "A",
-              "ttl": 300,
-              "rawText": "example.com.\t\t300\tIN\tA\t172.66.147.243",
-              "rRsetType": 1,
-              "address": "172.66.147.243"
-            },
-            {
-              "name": "example.com",
               "type": 2,
               "dnsType": "NS",
               "ttl": 21600,
               "rawText": "example.com.\t\t21600\tIN\tNS\telliott.ns.cloudflare.com.",
               "rRsetType": 2,
               "singleName": "elliott.ns.cloudflare.com."
-            },
-            {
-              "name": "example.com",
-              "type": 2,
-              "dnsType": "NS",
-              "ttl": 21600,
-              "rawText": "example.com.\t\t21600\tIN\tNS\thera.ns.cloudflare.com.",
-              "rRsetType": 2,
-              "singleName": "hera.ns.cloudflare.com."
             },
             {
               "name": "example.com",
@@ -486,15 +292,6 @@ export default {
               "rawText": "example.com.\t\t300\tIN\tAAAA\t2606:4700:10:0:0:0:ac42:93f3",
               "rRsetType": 28,
               "address": "2606:4700:10:0:0:0:ac42:93f3"
-            },
-            {
-              "name": "example.com",
-              "type": 28,
-              "dnsType": "AAAA",
-              "ttl": 300,
-              "rawText": "example.com.\t\t300\tIN\tAAAA\t2606:4700:10:0:0:0:6814:179a",
-              "rRsetType": 28,
-              "address": "2606:4700:10:0:0:0:6814:179a"
             },
             {
               "name": "example.com",
