@@ -2,7 +2,7 @@ const test = async (z, bundle) => {
   // Account-scoped call so the connection can be validated AND labelled with
   // real account data (credits/status), which requires a variable in the label.
   const response = await z.request({
-    url: 'https://api.apifreaks.com/v1.0/currency/supported-currencies',
+    url: 'https://api.apifreaks.com/v1.0/commodity/symbols',
   });
   return response.data;
 };
