@@ -1,11 +1,19 @@
 const perform = async (z, bundle) => {
+  // Accept comma- or newline-separated numbers, turn them into the
+  // array-of-objects shape the API requires: [{ number: "..." }, ...]
+  const numbers = String(bundle.inputData["numbers"] || "")
+    .split(/[\n,]+/)
+    .map((n) => n.trim())
+    .filter(Boolean)
+    .map((number) => ({ number }));
+
   const response = await z.request({
     url: "https://api.apifreaks.com/v1.0/phone/validation/bulk",
     method: "POST",
-    body: { "numbers": bundle.inputData["numbers"] },
+    body: { numbers },
   });
-  // API returns a bare array; wrap it so this create outputs an object
-  // (Zapier creates must return an object, not a top-level array).
+
+  // API returns a bare array; wrap it so this create outputs an object.
   return Array.isArray(response.data) ? { results: response.data } : response.data;
 };
 
@@ -21,38 +29,35 @@ export default {
       {
         key: "numbers",
         label: "Numbers",
-        type: 'string',
+        type: "string",
         required: true,
-        helpText: "Array of phone number objects. Maximum 100 per request.",
+        list: true,
+        helpText: "Phone numbers to validate (max 100). Add them as separate line items, or paste a comma/newline-separated list.",
       },
     ],
     perform,
     sample: {
       "results": [
         {
-      "raw_input": {
-        "number": "+14155552671"
-      },
-      "possible": true,
-      "valid": true,
-      "country_prefix": 1,
-      "national_number": 4155552671,
-      "country_code": "US",
-      "location": "San Francisco, CA",
-      "time_zones": [
-        "America/Los_Angeles"
-      ],
-      "line_type": "FIXED_LINE_OR_MOBILE",
-      "formats": {
-        "E164": "+14155552671",
-        "International": "+1 415-555-2671",
-        "National": "(415) 555-2671",
-        "RFC3966": "tel:+1-415-555-2671"
-      },
-      "area_code_length": 3,
-      "ndc_length": 3,
-      "can_be_internationally_dialled": true
-    }
+          "raw_input": { "number": "+14155552671" },
+          "possible": true,
+          "valid": true,
+          "country_prefix": 1,
+          "national_number": 4155552671,
+          "country_code": "US",
+          "location": "San Francisco, CA",
+          "time_zones": ["America/Los_Angeles"],
+          "line_type": "FIXED_LINE_OR_MOBILE",
+          "formats": {
+            "E164": "+14155552671",
+            "International": "+1 415-555-2671",
+            "National": "(415) 555-2671",
+            "RFC3966": "tel:+1-415-555-2671"
+          },
+          "area_code_length": 3,
+          "ndc_length": 3,
+          "can_be_internationally_dialled": true
+        }
       ]
     },
   },
