@@ -2,6 +2,7 @@ import packageJson from './package.json' with { type: 'json' };
 import zapier from 'zapier-platform-core';
 
 import authentication, { includeApiKey } from './authentication.js';
+import { removeEmptyParams } from './middleware.js';
 import t_pdf_file_list from './triggers/pdf_file_list.js';
 import c_get_latest_commodity_prices from './creates/get_latest_commodity_prices.js';
 import c_get_historical_commodity_prices from './creates/get_historical_commodity_prices.js';
@@ -121,7 +122,7 @@ export default {
   platformVersion: zapier.version,
   flags: { skipHttpPatch: true, cleanInputData: false },
   authentication,
-  beforeRequest: [includeApiKey],
+  beforeRequest: [includeApiKey, removeEmptyParams],
   
 
   triggers: {
