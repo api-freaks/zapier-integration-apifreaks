@@ -1,8 +1,47 @@
 const perform = async (z, bundle) => {
+  // The body must be { emailData: [ { email, name?, ip? }, ... ] } — an ARRAY of
+  // OBJECTS, each with a required "email". Sending a bare string causes the
+  // "Please provide data in required format in request body" 400.
+  let emailData = bundle.inputData.emailData;
+
+  // If provided as a raw JSON string, parse it. If that fails, fall back to
+  // treating it as a comma/newline separated list of plain email addresses.
+  if (typeof emailData === "string") {
+    const s = emailData.trim();
+    try {
+      emailData = JSON.parse(s);
+    } catch (e) {
+      emailData = s
+        .split(/[\n,]+/)
+        .map((x) => x.trim())
+        .filter(Boolean)
+        .map((email) => ({ email }));
+    }
+  }
+
+  if (!Array.isArray(emailData)) emailData = emailData ? [emailData] : [];
+
+  // Normalize each row into an object and drop empty optional fields.
+  emailData = emailData
+    .map((item) => {
+      if (item == null) return null;
+      if (typeof item === "string") {
+        const email = item.trim();
+        return email ? { email } : null;
+      }
+      if (!item.email) return null;
+      const obj = { email: String(item.email).trim() };
+      if (item.name) obj.name = item.name;
+      if (item.ip) obj.ip = item.ip;
+      return obj;
+    })
+    .filter(Boolean);
+
   const response = await z.request({
     url: "https://api.apifreaks.com/v1.0/email-validation/bulk",
     method: "POST",
-    body: { "emailData": bundle.inputData["emailData"] },
+    params: { format: bundle.inputData.format },
+    body: { emailData },
   });
   return response.data;
 };
@@ -18,10 +57,39 @@ export default {
     inputFields: [
       {
         key: "emailData",
-        label: "Emaildata",
-        type: 'string',
+        label: "Email Data",
         required: true,
-        helpText: "Array of email objects for bulk validation",
+        children: [
+          {
+            key: "email",
+            label: "Email",
+            type: "string",
+            required: true,
+            helpText: "Email address to validate.",
+          },
+          {
+            key: "name",
+            label: "Name",
+            type: "string",
+            required: false,
+            helpText: "Optional name associated with the email address.",
+          },
+          {
+            key: "ip",
+            label: "IP",
+            type: "string",
+            required: false,
+            helpText: "Optional IP address associated with the email address.",
+          },
+        ],
+        helpText: "Add one row per email address (up to 100).",
+      },
+      {
+        key: "format",
+        label: "Format",
+        type: "string",
+        required: false,
+        helpText: "Optional response format override. Leave blank for the default.",
       },
     ],
     perform,
@@ -48,39 +116,11 @@ export default {
           "dns": {
             "mxRecords": [
               "gmail-smtp-in.l.google.com.",
-              "alt1.gmail-smtp-in.l.google.com.",
-              "alt2.gmail-smtp-in.l.google.com.",
-              "alt3.gmail-smtp-in.l.google.com.",
-              "alt4.gmail-smtp-in.l.google.com."
+              "alt1.gmail-smtp-in.l.google.com."
             ],
             "aRecords": [
               "142.250.80.5"
             ]
-          }
-        },
-        {
-          "success": false,
-          "email": "test@example.com",
-          "name": "Example User",
-          "validEmail": "unknown",
-          "validSyntax": true,
-          "reason": "We are unable to determine if email is valid or invalid.",
-          "domain": {
-            "name": "example.com",
-            "disposable": true,
-            "spam": false,
-            "free": false,
-            "validDomain": true,
-            "catchAll": false
-          },
-          "account": {
-            "role": false
-          },
-          "dns": {
-            "mxRecords": [
-              "."
-            ],
-            "aRecords": []
           }
         }
       ]
