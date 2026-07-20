@@ -20,8 +20,9 @@ export default {
         key: "codes",
         label: "Codes",
         type: 'string',
+        list: true,
         required: true,
-        helpText: "Comma separated list of postal / zip codes. Max. 100 values.",
+        helpText: "List of postal / zip codes (max. 100). Add one code per line.",
       },
       {
         key: "country",

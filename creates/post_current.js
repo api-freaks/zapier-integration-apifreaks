@@ -1,8 +1,23 @@
 const perform = async (z, bundle) => {
+  // Zapier passes the line-item field "locations" as an array of objects.
+  // Each entry may use a city/place name, lat+long, or an IP address.
+  // Build clean location objects, dropping empty fields/rows.
+  const locations = (bundle.inputData["locations"] || [])
+    .map((loc) => {
+      const entry = {};
+      if (loc.location) entry.location = loc.location;
+      if (loc.lat !== undefined && loc.lat !== null && loc.lat !== "") entry.lat = loc.lat;
+      if (loc.long !== undefined && loc.long !== null && loc.long !== "") entry.long = loc.long;
+      if (loc.ip) entry.ip = loc.ip;
+      return entry;
+    })
+    .filter((entry) => Object.keys(entry).length > 0);
+
   const response = await z.request({
     url: "https://api.apifreaks.com/v1.0/weather/current",
     method: "POST",
     params: { "timezone": bundle.inputData["timezone"] },
+    body: { "locations": locations },
   });
   return response.data;
 };
@@ -16,6 +31,41 @@ export default {
   },
   operation: {
     inputFields: [
+      {
+        key: "locations",
+        label: "Locations",
+        required: true,
+        children: [
+          {
+            key: "location",
+            label: "Location",
+            type: 'string',
+            required: false,
+            helpText: "City name, place name, or full address.",
+          },
+          {
+            key: "lat",
+            label: "Latitude",
+            type: 'number',
+            required: false,
+            helpText: "Latitude of the location (use together with Longitude).",
+          },
+          {
+            key: "long",
+            label: "Longitude",
+            type: 'number',
+            required: false,
+            helpText: "Longitude of the location (use together with Latitude).",
+          },
+          {
+            key: "ip",
+            label: "IP Address",
+            type: 'string',
+            required: false,
+            helpText: "IP (v4 or v6) address for location inference.",
+          },
+        ],
+      },
       {
         key: "timezone",
         label: "Timezone",

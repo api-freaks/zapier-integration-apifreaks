@@ -27,10 +27,11 @@ export default {
       },
       {
         key: "domainNames",
-        label: "Domainnames",
+        label: "Domain Names",
         type: 'string',
+        list: true,
         required: true,
-        helpText: "List of domain names to check.",
+        helpText: "List of domain names to check (max. 100). Add one domain per line.",
       },
     ],
     perform,

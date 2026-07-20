@@ -29,7 +29,6 @@ import c_get_domain_availability_suggestions from './creates/get_domain_availabi
 import c_get_subdomains_lookup from './creates/get_subdomains_lookup.js';
 import c_post_email_validation_single from './creates/post_email_validation_single.js';
 import c_post_email_validation_bulk from './creates/post_email_validation_bulk.js';
-import c_get_credits_usage_info from './creates/get_credits_usage_info.js';
 import c_get_geocoder_search from './creates/get_geocoder_search.js';
 import c_get_geocoder_reverse from './creates/get_geocoder_reverse.js';
 import c_get_countries from './creates/get_countries.js';
@@ -155,7 +154,6 @@ export default {
     [c_get_subdomains_lookup.key]: c_get_subdomains_lookup,
     [c_post_email_validation_single.key]: c_post_email_validation_single,
     [c_post_email_validation_bulk.key]: c_post_email_validation_bulk,
-    [c_get_credits_usage_info.key]: c_get_credits_usage_info,
     [c_get_geocoder_search.key]: c_get_geocoder_search,
     [c_get_geocoder_reverse.key]: c_get_geocoder_reverse,
     [c_get_countries.key]: c_get_countries,

@@ -18,10 +18,11 @@ export default {
     inputFields: [
       {
         key: "domainNames",
-        label: "Domainnames",
+        label: "Domain Names",
         type: 'string',
-        required: false,
-        helpText: "A list of domain names for which WHOIS data is requested.",
+        list: true,
+        required: true,
+        helpText: "A list of domain names for which WHOIS data is requested (max. 100). Add one domain per line.",
       },
     ],
     perform,
@@ -77,35 +78,7 @@ export default {
             "serverdeleteprohibited",
             "serverupdateprohibited",
             "servertransferprohibited"
-          ],
-          "registry_data": {
-            "domain_name": "microsoft.com",
-            "query_time": "2026-06-18 07:33:13",
-            "whois_server": "https://rdap.verisign.com/com/v1/",
-            "domain_registered": "yes",
-            "create_date": "1991-05-02",
-            "update_date": "2026-01-29",
-            "expiry_date": "2027-05-03",
-            "domain_registrar": {
-              "iana_id": "292",
-              "registrar_name": "MarkMonitor Inc",
-              "whois_server": "whois.markmonitor.com"
-            },
-            "name_servers": [
-              "ns4-39.azure-dns.info",
-              "ns3-39.azure-dns.org",
-              "ns1-39.azure-dns.com",
-              "ns2-39.azure-dns.net"
-            ],
-            "domain_status": [
-              "clientupdateprohibited",
-              "clientdeleteprohibited",
-              "clienttransferprohibited",
-              "serverdeleteprohibited",
-              "serverupdateprohibited",
-              "servertransferprohibited"
-            ]
-          }
+          ]
         }
       ]
     },

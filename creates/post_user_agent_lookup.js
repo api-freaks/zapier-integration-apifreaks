@@ -20,41 +20,42 @@ export default {
     inputFields: [
       {
         key: "uaStrings",
-        label: "Uastrings",
+        label: "User Agent Strings",
         type: 'string',
-        required: false,
-        helpText: "List of user agent strings to parse",
+        list: true,
+        required: true,
+        helpText: "List of user agent strings to parse. Add one User-Agent string per line.",
       },
     ],
     perform,
     sample: {
       "results": [
         {
-      "user_agent_string": "Mozilla/5.0 (Linux; Android 8.0.0; SM-G960F Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36",
-      "name": "Chrome",
-      "type": "Browser",
-      "version": "62.0.3202.84",
-      "version_major": "62",
-      "device": {
-        "name": "Samsung SM-G960F",
-        "type": "Phone",
-        "brand": "Samsung",
-        "cpu": "Unknown"
-      },
-      "engine": {
-        "name": "Blink",
-        "type": "Browser",
-        "version": "62.0",
-        "version_major": "62"
-      },
-      "operating_system": {
-        "name": "Android",
-        "type": "Mobile",
-        "version": "8.0.0",
-        "version_major": "8",
-        "build": "R16NW"
-      }
-    }
+          "user_agent_string": "Mozilla/5.0 (Linux; Android 8.0.0; SM-G960F Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36",
+          "name": "Chrome",
+          "type": "Browser",
+          "version": "62.0.3202.84",
+          "version_major": "62",
+          "device": {
+            "name": "Samsung SM-G960F",
+            "type": "Phone",
+            "brand": "Samsung",
+            "cpu": "Unknown"
+          },
+          "engine": {
+            "name": "Blink",
+            "type": "Browser",
+            "version": "62.0",
+            "version_major": "62"
+          },
+          "operating_system": {
+            "name": "Android",
+            "type": "Mobile",
+            "version": "8.0.0",
+            "version_major": "8",
+            "build": "R16NW"
+          }
+        }
       ]
     },
   },
