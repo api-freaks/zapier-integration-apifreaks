@@ -24,7 +24,6 @@ import c_bulk_dns_lookup from './creates/bulk_dns_lookup.js';
 import c_dns_history_lookup from './creates/dns_history_lookup.js';
 import c_reverse_dns_lookup from './creates/reverse_dns_lookup.js';
 import c_get_domain_availability from './creates/get_domain_availability.js';
-import c_post_domain_availability from './creates/post_domain_availability.js';
 import c_get_domain_availability_suggestions from './creates/get_domain_availability_suggestions.js';
 import c_get_subdomains_lookup from './creates/get_subdomains_lookup.js';
 import c_post_email_validation_single from './creates/post_email_validation_single.js';
@@ -45,7 +44,6 @@ import c_get_geolocation_lookup from './creates/get_geolocation_lookup.js';
 import c_bulk_ip_lookup from './creates/bulk_ip_lookup.js';
 import c_get_ip_security from './creates/get_ip_security.js';
 import c_bulk_ip_security_lookup from './creates/bulk_ip_security_lookup.js';
-import c_ocr_predict from './creates/ocr_predict.js';
 import c_get_geolocation_astronomy from './creates/get_geolocation_astronomy.js';
 import c_post_pdf_merge from './creates/post_pdf_merge.js';
 import c_post_pdf_remove_pages from './creates/post_pdf_remove_pages.js';
@@ -59,8 +57,6 @@ import c_post_pdf_jpg from './creates/post_pdf_jpg.js';
 import c_post_pdf_tif from './creates/post_pdf_tif.js';
 import c_post_pdf_bmp from './creates/post_pdf_bmp.js';
 import c_post_pdf_gif from './creates/post_pdf_gif.js';
-import c_post_pdf_resource_upload from './creates/post_pdf_resource_upload.js';
-import c_post_pdf_resource_upload_binary from './creates/post_pdf_resource_upload_binary.js';
 import c_get_pdf_resource_download from './creates/get_pdf_resource_download.js';
 import c_get_pdf_task_status from './creates/get_pdf_task_status.js';
 import c_get_pdf_file_status from './creates/get_pdf_file_status.js';
@@ -75,7 +71,6 @@ import c_ssl_certificate_chain_lookup from './creates/ssl_certificate_chain_look
 import c_get_timezone from './creates/get_timezone.js';
 import c_convert_timezone from './creates/convert_timezone.js';
 import c_get_user_agent_lookup from './creates/get_user_agent_lookup.js';
-import c_post_user_agent_lookup from './creates/post_user_agent_lookup.js';
 import c_get_vat_supported_countries from './creates/get_vat_supported_countries.js';
 import c_get_vat_rates_ip_address from './creates/get_vat_rates_ip_address.js';
 import c_get_vat_rates_country from './creates/get_vat_rates_country.js';
@@ -84,7 +79,6 @@ import c_get_iban_validation from './creates/get_iban_validation.js';
 import c_get_swift_code_finder from './creates/get_swift_code_finder.js';
 import c_get_swift_code_lookup from './creates/get_swift_code_lookup.js';
 import c_get_current from './creates/get_current.js';
-import c_post_current from './creates/post_current.js';
 import c_get_forecast from './creates/get_forecast.js';
 import c_get_historical from './creates/get_historical.js';
 import c_get_time_series_2 from './creates/get_time_series_2.js';
@@ -92,13 +86,11 @@ import c_get_marine from './creates/get_marine.js';
 import c_get_air_quality from './creates/get_air_quality.js';
 import c_get_flood from './creates/get_flood.js';
 import c_whois_lookup from './creates/whois_lookup.js';
-import c_post_domain_whois_live from './creates/post_domain_whois_live.js';
 import c_get_ip_whois_live from './creates/get_ip_whois_live.js';
 import c_get_asn_whois_live from './creates/get_asn_whois_live.js';
 import c_whois_history_lookup from './creates/whois_history_lookup.js';
 import c_get_domain_whois_reverse from './creates/get_domain_whois_reverse.js';
 import c_lookup_zip_codes from './creates/lookup_zip_codes.js';
-import c_bulklookup_zip_codes_post from './creates/bulklookup_zip_codes_post.js';
 import c_search_zip_by_city from './creates/search_zip_by_city.js';
 import c_search_zip_by_region from './creates/search_zip_by_region.js';
 import c_search_zip_by_radius from './creates/search_zip_by_radius.js';
@@ -107,9 +99,7 @@ import c_get_zipcode_distance_match from './creates/get_zipcode_distance_match.j
 import c_get_timezone_v2 from './creates/get_timezone_v2.js';
 import c_get_geolocation_astronomy_v2 from './creates/get_geolocation_astronomy_v2.js';
 import c_get_geolocation_lookup_v2 from './creates/get_geolocation_lookup_v2.js';
-import c_bulk_ip_lookup_v2 from './creates/bulk_ip_lookup_v2.js';
 import c_whois_lookup_v2 from './creates/whois_lookup_v2.js';
-import c_post_domain_whois_live_v2 from './creates/post_domain_whois_live_v2.js';
 import c_grammar_detect from './creates/grammar_detect.js';
 import c_grammar_correct from './creates/grammar_correct.js';
 import c_weak_words_detect from './creates/weak_words_detect.js';
@@ -148,7 +138,6 @@ export default {
     [c_dns_history_lookup.key]: c_dns_history_lookup,
     [c_reverse_dns_lookup.key]: c_reverse_dns_lookup,
     [c_get_domain_availability.key]: c_get_domain_availability,
-    [c_post_domain_availability.key]: c_post_domain_availability,
     [c_get_domain_availability_suggestions.key]: c_get_domain_availability_suggestions,
     [c_get_subdomains_lookup.key]: c_get_subdomains_lookup,
     [c_post_email_validation_single.key]: c_post_email_validation_single,
@@ -169,7 +158,6 @@ export default {
     [c_bulk_ip_lookup.key]: c_bulk_ip_lookup,
     [c_get_ip_security.key]: c_get_ip_security,
     [c_bulk_ip_security_lookup.key]: c_bulk_ip_security_lookup,
-    [c_ocr_predict.key]: c_ocr_predict,
     [c_get_geolocation_astronomy.key]: c_get_geolocation_astronomy,
     [c_post_pdf_merge.key]: c_post_pdf_merge,
     [c_post_pdf_remove_pages.key]: c_post_pdf_remove_pages,
@@ -183,8 +171,6 @@ export default {
     [c_post_pdf_tif.key]: c_post_pdf_tif,
     [c_post_pdf_bmp.key]: c_post_pdf_bmp,
     [c_post_pdf_gif.key]: c_post_pdf_gif,
-    [c_post_pdf_resource_upload.key]: c_post_pdf_resource_upload,
-    [c_post_pdf_resource_upload_binary.key]: c_post_pdf_resource_upload_binary,
     [c_get_pdf_resource_download.key]: c_get_pdf_resource_download,
     [c_get_pdf_task_status.key]: c_get_pdf_task_status,
     [c_get_pdf_file_status.key]: c_get_pdf_file_status,
@@ -199,7 +185,6 @@ export default {
     [c_get_timezone.key]: c_get_timezone,
     [c_convert_timezone.key]: c_convert_timezone,
     [c_get_user_agent_lookup.key]: c_get_user_agent_lookup,
-    [c_post_user_agent_lookup.key]: c_post_user_agent_lookup,
     [c_get_vat_supported_countries.key]: c_get_vat_supported_countries,
     [c_get_vat_rates_ip_address.key]: c_get_vat_rates_ip_address,
     [c_get_vat_rates_country.key]: c_get_vat_rates_country,
@@ -208,7 +193,6 @@ export default {
     [c_get_swift_code_finder.key]: c_get_swift_code_finder,
     [c_get_swift_code_lookup.key]: c_get_swift_code_lookup,
     [c_get_current.key]: c_get_current,
-    [c_post_current.key]: c_post_current,
     [c_get_forecast.key]: c_get_forecast,
     [c_get_historical.key]: c_get_historical,
     [c_get_time_series_2.key]: c_get_time_series_2,
@@ -216,13 +200,11 @@ export default {
     [c_get_air_quality.key]: c_get_air_quality,
     [c_get_flood.key]: c_get_flood,
     [c_whois_lookup.key]: c_whois_lookup,
-    [c_post_domain_whois_live.key]: c_post_domain_whois_live,
     [c_get_ip_whois_live.key]: c_get_ip_whois_live,
     [c_get_asn_whois_live.key]: c_get_asn_whois_live,
     [c_whois_history_lookup.key]: c_whois_history_lookup,
     [c_get_domain_whois_reverse.key]: c_get_domain_whois_reverse,
     [c_lookup_zip_codes.key]: c_lookup_zip_codes,
-    [c_bulklookup_zip_codes_post.key]: c_bulklookup_zip_codes_post,
     [c_search_zip_by_city.key]: c_search_zip_by_city,
     [c_search_zip_by_region.key]: c_search_zip_by_region,
     [c_search_zip_by_radius.key]: c_search_zip_by_radius,
@@ -231,9 +213,7 @@ export default {
     [c_get_timezone_v2.key]: c_get_timezone_v2,
     [c_get_geolocation_astronomy_v2.key]: c_get_geolocation_astronomy_v2,
     [c_get_geolocation_lookup_v2.key]: c_get_geolocation_lookup_v2,
-    [c_bulk_ip_lookup_v2.key]: c_bulk_ip_lookup_v2,
     [c_whois_lookup_v2.key]: c_whois_lookup_v2,
-    [c_post_domain_whois_live_v2.key]: c_post_domain_whois_live_v2,
     [c_grammar_detect.key]: c_grammar_detect,
     [c_grammar_correct.key]: c_grammar_correct,
     [c_weak_words_detect.key]: c_weak_words_detect,
