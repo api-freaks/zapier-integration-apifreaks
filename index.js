@@ -83,7 +83,6 @@ import c_get_forecast from './creates/get_forecast.js';
 import c_get_historical from './creates/get_historical.js';
 import c_get_time_series_2 from './creates/get_time_series_2.js';
 import c_get_marine from './creates/get_marine.js';
-import c_get_air_quality from './creates/get_air_quality.js';
 import c_get_flood from './creates/get_flood.js';
 import c_whois_lookup from './creates/whois_lookup.js';
 import c_get_ip_whois_live from './creates/get_ip_whois_live.js';
@@ -197,7 +196,6 @@ export default {
     [c_get_historical.key]: c_get_historical,
     [c_get_time_series_2.key]: c_get_time_series_2,
     [c_get_marine.key]: c_get_marine,
-    [c_get_air_quality.key]: c_get_air_quality,
     [c_get_flood.key]: c_get_flood,
     [c_whois_lookup.key]: c_whois_lookup,
     [c_get_ip_whois_live.key]: c_get_ip_whois_live,
