@@ -79,7 +79,6 @@ import c_post_user_agent_lookup from './creates/post_user_agent_lookup.js';
 import c_get_vat_supported_countries from './creates/get_vat_supported_countries.js';
 import c_get_vat_rates_ip_address from './creates/get_vat_rates_ip_address.js';
 import c_get_vat_rates_country from './creates/get_vat_rates_country.js';
-import c_post_vat_rates_country from './creates/post_vat_rates_country.js';
 import c_get_vat_validation from './creates/get_vat_validation.js';
 import c_get_iban_validation from './creates/get_iban_validation.js';
 import c_get_swift_code_finder from './creates/get_swift_code_finder.js';
@@ -204,7 +203,6 @@ export default {
     [c_get_vat_supported_countries.key]: c_get_vat_supported_countries,
     [c_get_vat_rates_ip_address.key]: c_get_vat_rates_ip_address,
     [c_get_vat_rates_country.key]: c_get_vat_rates_country,
-    [c_post_vat_rates_country.key]: c_post_vat_rates_country,
     [c_get_vat_validation.key]: c_get_vat_validation,
     [c_get_iban_validation.key]: c_get_iban_validation,
     [c_get_swift_code_finder.key]: c_get_swift_code_finder,
